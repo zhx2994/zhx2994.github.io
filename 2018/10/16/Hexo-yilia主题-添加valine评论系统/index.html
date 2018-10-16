@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>about | 张海鑫的Blog</title>
+  <title>Hexo yilia主题 添加valine评论系统 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文链接：&amp;lt;%= post.title %&amp;gt; 作者：张海鑫 出处：http://zhx2994.github.io/本文基于 知识共享署名-相同方式共享 4.0 国际许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名张海鑫及链接。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="#前言昨天看了朋友通过GitHub搭建的博客，再加上自己很久以前就有了这个想法，今天便上网翻阅各种相关知识，最后博主感觉用Hexo + GitHub Pages搭建的博客看起来不错，便开始了搭建，搭建过程中在选择主题的时候感觉yilia主题不错，于是便搭起了一套yilia主题的博客。大家可以参考，我的博客，后来搭建完成之后再添加评论系统的时候遇到了一些困难，网上翻阅了各种评论系统，博主也总结了一下">
+<meta name="keywords" content="Hexo,博客搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo yilia主题 添加valine评论系统">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/Hexo-yilia主题-添加valine评论系统/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="本文链接：&amp;lt;%= post.title %&amp;gt; 作者：张海鑫 出处：http://zhx2994.github.io/本文基于 知识共享署名-相同方式共享 4.0 国际许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名张海鑫及链接。">
+<meta property="og:description" content="#前言昨天看了朋友通过GitHub搭建的博客，再加上自己很久以前就有了这个想法，今天便上网翻阅各种相关知识，最后博主感觉用Hexo + GitHub Pages搭建的博客看起来不错，便开始了搭建，搭建过程中在选择主题的时候感觉yilia主题不错，于是便搭起了一套yilia主题的博客。大家可以参考，我的博客，后来搭建完成之后再添加评论系统的时候遇到了一些困难，网上翻阅了各种评论系统，博主也总结了一下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://avatars1.githubusercontent.com/u/168751?v=3&s=140">
-<meta property="og:updated_time" content="2018-10-16T05:11:29.530Z">
+<meta property="og:updated_time" content="2018-10-16T09:18:37.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="本文链接：&amp;lt;%= post.title %&amp;gt; 作者：张海鑫 出处：http://zhx2994.github.io/本文基于 知识共享署名-相同方式共享 4.0 国际许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名张海鑫及链接。">
-<meta name="twitter:image" content="https://avatars1.githubusercontent.com/u/168751?v=3&s=140">
+<meta name="twitter:title" content="Hexo yilia主题 添加valine评论系统">
+<meta name="twitter:description" content="#前言昨天看了朋友通过GitHub搭建的博客，再加上自己很久以前就有了这个想法，今天便上网翻阅各种相关知识，最后博主感觉用Hexo + GitHub Pages搭建的博客看起来不错，便开始了搭建，搭建过程中在选择主题的时候感觉yilia主题不错，于是便搭起了一套yilia主题的博客。大家可以参考，我的博客，后来搭建完成之后再添加评论系统的时候遇到了一些困难，网上翻阅了各种评论系统，博主也总结了一下">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -154,27 +153,80 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-Hexo-yilia主题-添加valine评论系统" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      Hexo yilia主题 添加valine评论系统
     </h1>
   
 
         
-        <a href="/about/index.html" class="archive-article-date">
-  	<time datetime="2018-10-16T05:09:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
+        <a href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/" class="archive-article-date">
+  	<time datetime="2018-10-16T08:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div style="font-size:12px;border-bottom: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid"><br><div style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><br><img alt="" src="https://avatars1.githubusercontent.com/u/168751?v=3&s=140" width="90" height="100"><br></div><br><div style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"><br>本文链接：<a href="<%= post.link %>">&lt;%= post.title %&gt;</a> <br><br>作者：<br><a href="http://zhx2994.github.io/" target="_blank" rel="noopener">张海鑫</a> <br>出处：<br><a href="http://zhx2994.github.io/" target="_blank" rel="noopener">http://zhx2994.github.io/</a><br><br>本文基于<a target="_blank" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" href="http://creativecommons.org/licenses/by-sa/4.0/"> 知识共享署名-相同方式共享 4.0 </a><br>国际许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名<br><a href="http://zhx2994.github.io/" target="_blank" rel="noopener">张海鑫</a>及链接。<br></div><br></div>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="#前言"></a>#前言</h2><p>昨天看了朋友通过GitHub搭建的博客，再加上自己很久以前就有了这个想法，今天便上网翻阅各种相关知识，最后博主感觉用Hexo + GitHub Pages搭建的博客看起来不错，便开始了搭建，搭建过程中在选择主题的时候感觉yilia主题不错，于是便搭起了一套yilia主题的博客。大家可以参考，<a href="https://zhx2994.github.io" target="_blank" rel="noopener">我的博客</a>，后来搭建完成之后再添加评论系统的时候遇到了一些困难，网上翻阅了各种评论系统，博主也总结了一下：<br></p>
+<ol>
+<li>多说（现在已经不能用）<br></li>
+<li>网易云跟帖（现在已经不能用）<br></li>
+<li>畅言（需要提供备案号）<br></li>
+<li>来必力（LiveRe）<br></li>
+<li>Disqus <br></li>
+<li>Hypercomments <br></li>
+<li>Valine <br><br>最终博主选择Valine，但是发现网上yilia主题使用Valine的帖子很少，反正博主没有找到，最终博主在<a href="https://github.com/litten/hexo-theme-yilia/pull/646" target="_blank" rel="noopener">GitHub</a>中发现了方案。</li>
+</ol>
+<h2 id="正文"><a href="#正文" class="headerlink" title="#正文"></a>#正文</h2><p>首先我们在hexo\themes\yilia_config.yml中加入Valine的相关配置：<br></p>
+<pre><code>#6、Valine https://valine.js.org
+valine: 
+ appid:  #Leancloud应用的appId
+ appkey:  #Leancloud应用的appKey
+ verify: false #验证码
+ notify: false #评论回复提醒
+ avatar: mm #评论列表头像样式：&apos;&apos;/mm/identicon/monsterid/wavatar/retro/hide
+ placeholder: Just go go #评论框占位符
+</code></pre><p>然后在hexo\themes\yilia\layout_partial\article.ejs中加入Valine:<br></p>
+<pre><code>&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey){ %&gt;
+&lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;
+  &lt;style&gt;
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  &lt;/style&gt;
+  &lt;%- partial(&apos;post/valine&apos;, {
+    key: post.slug,
+    title: post.title,
+    url: config.url+url_for(post.path)
+    }) %&gt;
+  &lt;/section&gt;
+&lt;% } %&gt;
+</code></pre><p>这里对样式进行了修改，改成了响应式布局，宽度应该能够自动和上面的文章部分对齐。<br><br><br><br><br>最后我们需要加入Valine的方法，在hexo\themes\yilia\layout_partial\post\valine.ejs中：</p>
+<pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; 
+&lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;
+   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: &apos;.comment&apos;,
+            notify: notify,
+            verify: verify,
+            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,
+            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,
+            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,
+            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;
+        });
+    }
+&lt;/script&gt;
+</code></pre><p>最终重新生成、部署，然后刷新一下，就可以看到效果了~</p>
+
       
 
       
@@ -213,7 +265,33 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -263,7 +341,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/about/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/16/Hexo-yilia主题-添加valine评论系统/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,6 +353,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo 命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -352,7 +440,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
