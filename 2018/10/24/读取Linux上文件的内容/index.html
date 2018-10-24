@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 张海鑫的Blog</title>
+  <title>读取Linux上文件的内容 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Harrison&apos;s blog | java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张海鑫的Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="前言 今天因为项目中遇到一个问题，需要从Linux系统中读一个文件的内容，这个是到时候项目要部署到Linux上然后读取的，所以相当于是访问本地机器读取，所以比较简单。">
+<meta name="keywords" content="Java,Linux,文件操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读取Linux上文件的内容">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/读取Linux上文件的内容/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="Harrison&apos;s blog | java">
+<meta property="og:description" content="前言 今天因为项目中遇到一个问题，需要从Linux系统中读一个文件的内容，这个是到时候项目要部署到Linux上然后读取的，所以相当于是访问本地机器读取，所以比较简单。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/AHyxL5M.png">
+<meta property="og:updated_time" content="2018-10-24T03:42:37.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张海鑫的Blog">
-<meta name="twitter:description" content="Harrison&apos;s blog | java">
+<meta name="twitter:title" content="读取Linux上文件的内容">
+<meta name="twitter:description" content="前言 今天因为项目中遇到一个问题，需要从Linux系统中读一个文件的内容，这个是到时候项目要部署到Linux上然后读取的，所以相当于是访问本地机器读取，所以比较简单。">
+<meta name="twitter:image" content="https://i.imgur.com/AHyxL5M.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -161,36 +165,108 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-读取Linux上文件的内容" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/24/读取Linux上文件的内容/" class="archive-article-date">
-  	<time datetime="2018-10-24T02:19:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/24/读取Linux上文件的内容/">读取Linux上文件的内容</a>
+    <h1 class="article-title" itemprop="name">
+      读取Linux上文件的内容
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/24/读取Linux上文件的内容/" class="archive-article-date">
+  	<time datetime="2018-10-24T02:19:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>今天因为项目中遇到一个问题，需要从Linux系统中读一个文件的内容，这个是到时候项目要部署到Linux上然后读取的，所以相当于是访问本地机器读取，所以比较简单。<br><a id="more"></a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<p>这里用windows简单测试，博主在E:/下面新建一个测试文本test.txt，里面内容如下：</p>
+<p><img src="https://i.imgur.com/AHyxL5M.png" alt=""></p>
+<p>java代码如下：</p>
+<pre><code>public static String getFileContentByPath (String path, String fileName)  {
+
+    String content = null;
+    File file = new File(path + fileName);
+    if(file.exists()) {
+        if(file.isFile()){
+
+            try{
+                BufferedReader input = new BufferedReader (new FileReader(file));
+                StringBuffer buffer = new StringBuffer();
+                String text;
+
+                while((text = input.readLine()) != null) {
+                    buffer.append(text + &quot;/n&quot;);
+                }
+
+                content = buffer.toString();
+            }
+            catch(IOException e){
+                System.err.println(&quot;File [&quot;+ path + fileName +&quot;] Error!&quot;);
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println(&quot;File [&quot;+ path + fileName +&quot;] is not a file!&quot;);
+        }
+    } else {
+        System.out.println(&quot;File [&quot;+ path + fileName +&quot;] does not exist!&quot;);
+    }
+    return content;
+}
+
+public static void main(String[] args) {
+
+    System.out.println(&quot;读取的内容：&quot; + getFileContentByPath(&quot;e:/&quot;,&quot;test.txt&quot;));
+}
+</code></pre><p>运行输出结果： 读取的内容：测试内容！/n</p>
+<p>这里我们用BufferedReader去读这个文件，然后循环执行input.readLine() 一行一行将每行的内容读出来，最终拼接成的buffer就是我们文件中的全部内容了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -210,7 +286,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -223,123 +299,131 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/24/读取Linux上文件的内容/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/" class="archive-article-date">
-  	<time datetime="2018-10-16T08:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo yilia主题 添加valine评论系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/">Hexo yilia主题 添加valine评论系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-16T04:20:32.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/hello-world/">Hexo 命令</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "5FaP5VUpPTpHmnqQYEc440aS-gzGzoHsz",
+            app_key: "ak5HWLtA7Q8cykyeEyHxCJWP",
+            placeholder: "老铁，不想唠两句吗？",
+            avatar:"wavatar"
+        });
+    }
+</script>
+  </section>
+
 
 
           </div>
@@ -362,8 +446,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
