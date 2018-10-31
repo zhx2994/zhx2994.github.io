@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/10 | 张海鑫的Blog</title>
+  <title>微信小程序开发总结文档 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Harrison&apos;s blog | java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张海鑫的Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+  <meta name="description" content="前言 今天研究了研究微信小程序的开发，具体开发教程就不多说了， 毕竟网上有很多，我这里呢是讲解一下我自己对微信小程序的理解。后续博主会慢慢补充。首先微信小程序需要使用微信开发者工具来开发，项目结构如下：">
+<meta name="keywords" content="微信小程序,开发文档,教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序开发总结文档">
+<meta property="og:url" content="http://yoursite.com/2018/10/31/微信小程序开发总结文档/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="Harrison&apos;s blog | java">
+<meta property="og:description" content="前言 今天研究了研究微信小程序的开发，具体开发教程就不多说了， 毕竟网上有很多，我这里呢是讲解一下我自己对微信小程序的理解。后续博主会慢慢补充。首先微信小程序需要使用微信开发者工具来开发，项目结构如下：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/CWYGfqj.png">
+<meta property="og:updated_time" content="2018-10-31T10:38:58.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张海鑫的Blog">
-<meta name="twitter:description" content="Harrison&apos;s blog | java">
+<meta name="twitter:title" content="微信小程序开发总结文档">
+<meta name="twitter:description" content="前言 今天研究了研究微信小程序的开发，具体开发教程就不多说了， 毕竟网上有很多，我这里呢是讲解一下我自己对微信小程序的理解。后续博主会慢慢补充。首先微信小程序需要使用微信开发者工具来开发，项目结构如下：">
+<meta name="twitter:image" content="https://i.imgur.com/CWYGfqj.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -161,36 +165,105 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-微信小程序开发总结文档" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/微信小程序开发总结文档/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/微信小程序开发总结文档/">微信小程序开发总结文档</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序开发总结文档
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/31/微信小程序开发总结文档/" class="archive-article-date">
+  	<time datetime="2018-10-31T09:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>今天研究了研究微信小程序的开发，具体开发教程就不多说了， 毕竟网上有很多，我这里呢是讲解一下我自己对微信小程序的理解。后续博主会慢慢补充。<br>首先微信小程序需要使用微信开发者工具来开发，项目结构如下：<br><img src="https://i.imgur.com/CWYGfqj.png" alt=""></p>
+<a id="more"></a>
+<h2 id="与普通页面的区别"><a href="#与普通页面的区别" class="headerlink" title="####与普通页面的区别"></a>####与普通页面的区别</h2><p>其实就是写页面，只不过是微信自己的一套页面写法，和正常的页面写法对应关系：</p>
+<p>wxml文件 = html文件<br><br>js文件 = js文件<br><br>wxss文件 = css文件<br><br>json文件 相当于是一个配置页面的文件,可以配置页面的标题、字体颜色等具体配置参考<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#全局配置" target="_blank" rel="noopener">app.json文档</a></p>
+<h2 id="wxml"><a href="#wxml" class="headerlink" title="####wxml"></a>####wxml</h2><p>wxml里面的标签 view、text是微信自己的页面标签写法 标签的对应介绍可以看<a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank" rel="noopener">组件文档</a>。</p>
+<h2 id="js"><a href="#js" class="headerlink" title="####js"></a>####js</h2><p>js文件和之前基本相同，所以就不多做介绍了。</p>
+<pre><code>// 这一句是引入别的js文件的写法，这里是引入上层目录中utils目录下的utils.js文件
+const util = require(&quot;../utils/utils.js&quot;);
+
+// Page({})是他js的基本写法，在里面定义变量或者function， 
+Page({
+  data: {   
+      testText: &quot;你好&quot;
+  }
+  // data里面是定义变量的，页面可以直接根据这里的变量名取到对应的值， 这里是定义了一个叫做testText的变量 值是你好。 
+      页面取的时候就是 {{testText}} , 得到的就是 你好。
+
+  clickMe: function() {
+    wx.showModal({
+      title: &apos;Harrison的小提示&apos;,
+      content: &apos;弹个框吓死你！&apos;,
+      cancelText: &apos;滚！&apos;,
+      confirmText: &apos;吓死了！&apos;,
+      success: function (res) {
+        if (res.confirm) {
+          console.log(&apos;吓死了！&apos;)
+        } else {
+          console.log(&apos;滚！&apos;)
+        }
+
+      }
+    })
+  }
+  // 这里是定义了一个function方法叫做clickMe， 然后里面是一个弹框。
+})
+</code></pre><p>另外推荐一个微信小程序各种弹框的写法：<a href="https://blog.csdn.net/hedong_77/article/details/54948537" target="_blank" rel="noopener">微信小程序之toast等弹框提示</a></p>
+<p>js里面还有一些固定的函数， 比如onLoad方法。<br>这些是一些页面加载函数之类的类似以前的 document.ready({}) 这种。<br>这些固定函数在<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html" target="_blank" rel="noopener">页面Page文档</a>中可以看到.</p>
+<p>还有一些页面的事件 例如手指触摸事件、手指触摸后移动等等 类似于以前的键盘抬起这种事件的写法可以参考<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html" target="_blank" rel="noopener">事件文档</a>.</p>
+<p>最后附上微信小程序的<a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank" rel="noopener">Api文档</a>。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -210,7 +283,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -223,180 +296,131 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/31/微信小程序开发总结文档/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/24/读取Linux上文件的内容/" class="archive-article-date">
-  	<time datetime="2018-10-24T02:19:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/24/读取Linux上文件的内容/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">读取Linux上文件的内容</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/24/读取Linux上文件的内容/">读取Linux上文件的内容</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件操作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/" class="archive-article-date">
-  	<time datetime="2018-10-16T08:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/">Hexo yilia主题 添加valine评论系统</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-16T04:20:32.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/hello-world/">Hexo 命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "5FaP5VUpPTpHmnqQYEc440aS-gzGzoHsz",
+            app_key: "ak5HWLtA7Q8cykyeEyHxCJWP",
+            placeholder: "老铁，不想唠两句吗？",
+            avatar:"wavatar"
+        });
+    }
+</script>
+  </section>
+
 
 
           </div>
@@ -419,8 +443,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
