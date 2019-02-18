@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo 命令 | 张海鑫的Blog</title>
+  <title>Java 图片压缩至指定大小 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎来到我的博客，该博客是用 Hexo 配合GitHub Pages搭建的。下面是博主在搭建时用到的一些比较重要的Hexo命令，为了方便所以利用此篇博文记录。该博客在博主GitHub中开源.">
-<meta name="keywords" content="Hexo,博客搭建">
+  <meta name="description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
+<meta name="keywords" content="Java,图片操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 命令">
-<meta property="og:url" content="http://yoursite.com/2018/10/16/hello-world/index.html">
+<meta property="og:title" content="Java 图片压缩至指定大小">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/Java-图片压缩至指定大小/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="欢迎来到我的博客，该博客是用 Hexo 配合GitHub Pages搭建的。下面是博主在搭建时用到的一些比较重要的Hexo命令，为了方便所以利用此篇博文记录。该博客在博主GitHub中开源.">
+<meta property="og:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-16T09:37:17.559Z">
+<meta property="og:image" content="https://i.imgur.com/Slgyx4Y.png">
+<meta property="og:image" content="https://i.imgur.com/4yz8FfI.png">
+<meta property="og:image" content="https://i.imgur.com/CKOz5gl.png">
+<meta property="og:image" content="https://i.imgur.com/lj6ZzGD.jpg">
+<meta property="og:image" content="https://i.imgur.com/N0UoTpM.png">
+<meta property="og:updated_time" content="2019-02-18T03:22:38.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 命令">
-<meta name="twitter:description" content="欢迎来到我的博客，该博客是用 Hexo 配合GitHub Pages搭建的。下面是博主在搭建时用到的一些比较重要的Hexo命令，为了方便所以利用此篇博文记录。该博客在博主GitHub中开源.">
+<meta name="twitter:title" content="Java 图片压缩至指定大小">
+<meta name="twitter:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
+<meta name="twitter:image" content="https://i.imgur.com/Slgyx4Y.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -163,35 +169,95 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java-图片压缩至指定大小" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo 命令
+      Java 图片压缩至指定大小
     </h1>
   
 
         
-        <a href="/2018/10/16/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-16T04:20:32.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
+        <a href="/2019/02/18/Java-图片压缩至指定大小/" class="archive-article-date">
+  	<time datetime="2019-02-18T02:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>欢迎来到我的博客，该博客是用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 配合GitHub Pages搭建的。下面是博主在搭建时用到的一些比较重要的Hexo命令，为了方便所以利用此篇博文记录。该博客在博主<a href="https://github.com/zhx2994/zhx2994.github.io" target="_blank" rel="noopener">GitHub</a>中开源.<a id="more"></a></p>
-<h2 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h2><h3 id="创建一篇博文"><a href="#创建一篇博文" class="headerlink" title="创建一篇博文"></a>创建一篇博文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"博文名称"</span></span><br></pre></td></tr></table></figure>
-<p>查看更多: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>查看更多: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>查看更多: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署至远程站点（如：GitHub）"><a href="#部署至远程站点（如：GitHub）" class="headerlink" title="部署至远程站点（如：GitHub）"></a>部署至远程站点（如：GitHub）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>查看更多: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的base64。最终博主找到可以利用thumbnailator对图片进行压缩。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<p>由于公司网络带宽差不多是100多kb，所以目前博主的设计方案是 如果图片大于128kb的话，就将图片压缩至128kb以下。我找到google有个插件thumbnailator可以满足我们的需求。 首先我们来看一下这个插件（Thumbnails类源码 of方法）：</p>
+<p><img src="https://i.imgur.com/Slgyx4Y.png" alt=""></p>
+<p>我们可以看到它的参数是源文件，也就是你初始的图片，准备编辑的图片。它有几个重载的方法，我们可以分别传入这些参数，我的项目需要用流，所以我传进去了一个ByteArrayInputStream对象。</p>
+<p>他还有个方法是.scale()方法，它有两个重载：</p>
+<p><img src="https://i.imgur.com/4yz8FfI.png" alt=""></p>
+<p>单个参数的是宽高都按照相同的比例缩放。两个参数的方法var1是给宽度设置缩放比，var3是给高度设置缩放比。</p>
+<p>最后一个是to*（）；这个方法是你压缩完之后，输出的格式，它有这几个方法：</p>
+<p><img src="https://i.imgur.com/CKOz5gl.png" alt=""></p>
+<p>这几个方法就可以满足我们的需求了。<br>下面贴一下我写的util代码，一共两个方法：</p>
+<pre><code>/**
+ * 根据指定大小压缩图片
+ *
+ * @param imageBytes  源图片字节数组
+ * @param desFileSize 指定图片大小，单位kb
+ * @return 压缩质量后的图片字节数组
+ */
+public static byte[] compressPicForScale(byte[] imageBytes, long desFileSize) {
+    if (imageBytes == null || imageBytes.length &lt;= 0 || imageBytes.length &lt; desFileSize * 1024) {
+        return null;
+    }
+    long srcSize = imageBytes.length;
+    double accuracy = getAccuracy(srcSize / 1024);
+    try {
+        while (imageBytes.length &gt; desFileSize * 1024) {
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(imageBytes);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream(imageBytes.length);
+            Thumbnails.of(inputStream)
+                    .scale(accuracy)
+                    .outputQuality(accuracy)
+                    .toOutputStream(outputStream);
+            imageBytes = outputStream.toByteArray();
+        }
+        log.info(&quot;【图片压缩】| 图片原大小={&quot; + srcSize / 1024 + &quot;}kb | 压缩后大小={&quot; + imageBytes.length / 1024 + &quot;}kb | &quot;);
+    } catch (Exception e) {
+        log.error(&quot;【图片压缩】msg=图片压缩失败!&quot; + e);
+        DefaultMonitorImpl.pushException(&quot;【图片压缩】msg=图片压缩失败!&quot; + e);
+    }
+    return imageBytes;
+}
+
+/**
+ * 自动调节精度(经验数值)
+ *
+ * @param size 源图片大小
+ * @return 图片压缩质量比
+ */
+private static double getAccuracy(long size) {
+    double accuracy;
+    if (size &lt; 900) {
+        accuracy = 0.85;
+    } else if (size &lt; 2047) {
+        accuracy = 0.6;
+    } else if (size &lt; 3275) {
+        accuracy = 0.44;
+    } else {
+        accuracy = 0.4;
+    }
+    return accuracy;
+}
+</code></pre><p>这里解释一下，getAccuracy方法的作用是根据我们指定的图片大小来判断一下scale方法需要的精度是多少。这个是博主从这个<a href="https://blog.csdn.net/worstezreal/article/details/79746214" target="_blank" rel="noopener">博客</a>上看到的。感觉很好用。</p>
+<p>下面看一下原图和压缩后图片的效果(原图（左），压缩图（右）)：</p>
+<p><img src="https://i.imgur.com/lj6ZzGD.jpg" alt=""></p>
+<p>可以看到压缩效果还是不错的，而且压缩过程也不会特别慢。</p>
+<p><img src="https://i.imgur.com/N0UoTpM.png" alt=""></p>
+<p>2M的图片压缩至28kb 用时1秒。</p>
+<p>而且Thumbnails里面还有一些其他的方法，大家有兴趣的可以去看一下源码。 </p>
 
       
 
@@ -236,11 +302,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片操作</a>
         		</li>
       		
 		</ul>
@@ -252,7 +318,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo教程//" class="article-tag-list-link color2">Hexo教程</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -307,7 +373,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/16/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/18/Java-图片压缩至指定大小/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,15 +387,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/10/16/Hexo-yilia主题-添加valine评论系统/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo yilia主题 添加valine评论系统
-        
-      </div>
-    </a>
   
+    <a href="/2018/10/31/微信小程序开发总结文档/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序开发总结文档</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
