@@ -184,75 +184,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p>由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的base64。最终博主找到可以利用thumbnailator对图片进行压缩。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
-<p>由于公司网络带宽差不多是100多kb，所以目前博主的设计方案是 如果图片大于128kb的话，就将图片压缩至128kb以下。我找到google有个插件thumbnailator可以满足我们的需求。 首先我们来看一下这个插件（Thumbnails类源码 of方法）：</p>
-<p><img src="https://i.imgur.com/Slgyx4Y.png" alt=""></p>
-<p>我们可以看到它的参数是源文件，也就是你初始的图片，准备编辑的图片。它有几个重载的方法，我们可以分别传入这些参数，我的项目需要用流，所以我传进去了一个ByteArrayInputStream对象。</p>
-<p>他还有个方法是.scale()方法，它有两个重载：</p>
-<p><img src="https://i.imgur.com/4yz8FfI.png" alt=""></p>
-<p>单个参数的是宽高都按照相同的比例缩放。两个参数的方法var1是给宽度设置缩放比，var3是给高度设置缩放比。</p>
-<p>最后一个是to*（）；这个方法是你压缩完之后，输出的格式，它有这几个方法：</p>
-<p><img src="https://i.imgur.com/CKOz5gl.png" alt=""></p>
-<p>这几个方法就可以满足我们的需求了。<br>下面贴一下我写的util代码，一共两个方法：</p>
-<pre><code>/**
- * 根据指定大小压缩图片
- *
- * @param imageBytes  源图片字节数组
- * @param desFileSize 指定图片大小，单位kb
- * @return 压缩质量后的图片字节数组
- */
-public static byte[] compressPicForScale(byte[] imageBytes, long desFileSize) {
-    if (imageBytes == null || imageBytes.length &lt;= 0 || imageBytes.length &lt; desFileSize * 1024) {
-        return null;
-    }
-    long srcSize = imageBytes.length;
-    double accuracy = getAccuracy(srcSize / 1024);
-    try {
-        while (imageBytes.length &gt; desFileSize * 1024) {
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(imageBytes);
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream(imageBytes.length);
-            Thumbnails.of(inputStream)
-                    .scale(accuracy)
-                    .outputQuality(accuracy)
-                    .toOutputStream(outputStream);
-            imageBytes = outputStream.toByteArray();
-        }
-        log.info(&quot;【图片压缩】| 图片原大小={&quot; + srcSize / 1024 + &quot;}kb | 压缩后大小={&quot; + imageBytes.length / 1024 + &quot;}kb | &quot;);
-    } catch (Exception e) {
-        log.error(&quot;【图片压缩】msg=图片压缩失败!&quot; + e);
-        DefaultMonitorImpl.pushException(&quot;【图片压缩】msg=图片压缩失败!&quot; + e);
-    }
-    return imageBytes;
-}
-
-/**
- * 自动调节精度(经验数值)
- *
- * @param size 源图片大小
- * @return 图片压缩质量比
- */
-private static double getAccuracy(long size) {
-    double accuracy;
-    if (size &lt; 900) {
-        accuracy = 0.85;
-    } else if (size &lt; 2047) {
-        accuracy = 0.6;
-    } else if (size &lt; 3275) {
-        accuracy = 0.44;
-    } else {
-        accuracy = 0.4;
-    }
-    return accuracy;
-}
-</code></pre><p>这里解释一下，getAccuracy方法的作用是根据我们指定的图片大小来判断一下scale方法需要的精度是多少。这个是博主从这个<a href="https://blog.csdn.net/worstezreal/article/details/79746214" target="_blank" rel="noopener">博客</a>上看到的。感觉很好用。</p>
-<p>下面看一下原图和压缩后图片的效果(原图（左），压缩图（右）)：</p>
-<p><img src="https://i.imgur.com/lj6ZzGD.jpg" alt=""></p>
-<p>可以看到压缩效果还是不错的，而且压缩过程也不会特别慢。</p>
-<p><img src="https://i.imgur.com/N0UoTpM.png" alt=""></p>
-<p>2M的图片压缩至28kb 用时1秒。</p>
-<p>而且Thumbnails里面还有一些其他的方法，大家有兴趣的可以去看一下源码。 </p>
-
+<p>由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。
+        
+          <a class="article-more-a" href="/2019/02/18/Java-图片压缩至指定大小/#more">more >></a>
+        
       
 
       

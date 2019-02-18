@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java 图片压缩至指定大小 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
+  <meta name="description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。">
 <meta name="keywords" content="Java,图片操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 图片压缩至指定大小">
 <meta property="og:url" content="http://yoursite.com/2019/02/18/Java-图片压缩至指定大小/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
+<meta property="og:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/Slgyx4Y.png">
 <meta property="og:image" content="https://i.imgur.com/4yz8FfI.png">
 <meta property="og:image" content="https://i.imgur.com/CKOz5gl.png">
 <meta property="og:image" content="https://i.imgur.com/lj6ZzGD.jpg">
 <meta property="og:image" content="https://i.imgur.com/N0UoTpM.png">
-<meta property="og:updated_time" content="2019-02-18T03:22:38.101Z">
+<meta property="og:updated_time" content="2019-02-18T03:24:25.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 图片压缩至指定大小">
-<meta name="twitter:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的ba">
+<meta name="twitter:description" content="前言 由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。">
 <meta name="twitter:image" content="https://i.imgur.com/Slgyx4Y.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p>由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的base64。最终博主找到可以利用thumbnailator对图片进行压缩。</p>
+<p>由于公司业务需求， 需要解决图片过大加载过慢的问题。这个问题呢首先给大家描述一下，起初是上传图片时将图片转换为base64保存至数据库存储的。<a id="more"></a> 然后获取的时候会直接取出来base64转换图片展示，这样就发现上传的图片如果过大， 公司网络加载是会很慢的。 所以想到一个办法就是 上传时将图片压缩， 压缩后的和压缩之前的都保存下来。 然后默认展示压缩后的图片，然后点击图片时再去查出来原始图片的base64。最终博主找到可以利用thumbnailator对图片进行压缩。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
 <p>由于公司网络带宽差不多是100多kb，所以目前博主的设计方案是 如果图片大于128kb的话，就将图片压缩至128kb以下。我找到google有个插件thumbnailator可以满足我们的需求。 首先我们来看一下这个插件（Thumbnails类源码 of方法）：</p>
 <p><img src="https://i.imgur.com/Slgyx4Y.png" alt=""></p>
