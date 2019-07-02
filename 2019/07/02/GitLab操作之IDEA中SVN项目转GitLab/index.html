@@ -6,18 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: Java | 张海鑫的Blog</title>
+  <title>GitLab操作之IDEA中SVN项目转GitLab | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Harrison&apos;s blog | java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张海鑫的Blog">
-<meta property="og:url" content="http://yoursite.com/categories/Java/index.html">
+  <meta name="description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
+<meta name="keywords" content="GitLab,仓库管理,IDEA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitLab操作之IDEA中SVN项目转GitLab">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/GitLab操作之IDEA中SVN项目转GitLab/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="Harrison&apos;s blog | java">
+<meta property="og:description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/7sbueMf.png">
+<meta property="og:image" content="https://i.imgur.com/KjXOTyg.png">
+<meta property="og:image" content="https://i.imgur.com/A4rINCc.png">
+<meta property="og:image" content="https://i.imgur.com/mmsouHh.png">
+<meta property="og:image" content="https://i.imgur.com/moGD94v.png">
+<meta property="og:image" content="https://i.imgur.com/tcdBU2f.png">
+<meta property="og:image" content="https://i.imgur.com/97G8Qkh.png">
+<meta property="og:updated_time" content="2019-07-02T09:54:00.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张海鑫的Blog">
-<meta name="twitter:description" content="Harrison&apos;s blog | java">
+<meta name="twitter:title" content="GitLab操作之IDEA中SVN项目转GitLab">
+<meta name="twitter:description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
+<meta name="twitter:image" content="https://i.imgur.com/7sbueMf.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -161,142 +171,235 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-GitLab操作之IDEA中SVN项目转GitLab" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/18/Java-图片压缩至指定大小/" class="archive-article-date">
-  	<time datetime="2019-02-18T02:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/18/Java-图片压缩至指定大小/">Java 图片压缩至指定大小</a>
+    <h1 class="article-title" itemprop="name">
+      GitLab操作之IDEA中SVN项目转GitLab
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/02/GitLab操作之IDEA中SVN项目转GitLab/" class="archive-article-date">
+  	<time datetime="2019-07-02T09:12:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。<a id="more"></a></p>
+<hr>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="一、SVN项目转GitLab"><a href="#一、SVN项目转GitLab" class="headerlink" title="一、SVN项目转GitLab"></a>一、SVN项目转GitLab</h4><p>我们在IDEA中将一个已经关联SVN的项目导入到GitLab中。 首先我们需要在我们GitLab管理页面上先创建一个对应的project，获取到仓库地址。这一步就不做多叙述了。</p>
+<p>建立好project之后，我们打开IDEA，找到上方 VCS -&gt; Import into Version Control -&gt; Create Git Repository…<br><img src="https://i.imgur.com/7sbueMf.png" alt=""></p>
+<p>然后选择我们对应的项目目录，稍等IDEA下方的进度走完之后，右键项目可以看到已经多出了Git选项。之后我们就可以选择我们需要加入到GitLab中的文件，然后右键 -&gt; Git -&gt; Add. 将我们的文件加入到库。<br><img src="https://i.imgur.com/KjXOTyg.png" alt=""></p>
+<p>完成之后继续右键 -&gt; Git -&gt; Commit Files. 提交代码。<br><img src="https://i.imgur.com/A4rINCc.png" alt=""></p>
+<p>代码提交之后，我们就需要将我们的操作推送到对应的远程仓库了。右键 -&gt; Git -&gt; Repository -&gt; Push.<br><img src="https://i.imgur.com/mmsouHh.png" alt=""></p>
+<p>然后点击Define remote,在URL框中输入对应的远程仓库地址（即开始在GitLab管理页面上先创建的对应的project之后获取到的地址）。<br>之后我们点击Push。然后刷新远程仓库就可以看到我们的代码了。</p>
+<h4 id="二、检出GitLab远程仓库中的项目到本地"><a href="#二、检出GitLab远程仓库中的项目到本地" class="headerlink" title="二、检出GitLab远程仓库中的项目到本地"></a>二、检出GitLab远程仓库中的项目到本地</h4><p>点击 VCS -&gt; Checkout from Version Control -&gt; Git.<br><img src="https://i.imgur.com/moGD94v.png" alt=""></p>
+<p>然后在URL中输入远程仓库地址，在Directory中选择存放的本地目录，点击Clone。</p>
+<p>这样就将远程仓库中的项目检出到本地了。</p>
+<h4 id="三、切换分支"><a href="#三、切换分支" class="headerlink" title="三、切换分支"></a>三、切换分支</h4><p>在GitLab管理页面上创建好分支之后，在IDEA右键项目 -&gt; Git -&gt; Repository -&gt; Fetch.点击右下角如下位置，可以看到我们拥有的分支。<br><img src="https://i.imgur.com/tcdBU2f.png" alt=""></p>
+<p>点击对应分支 -&gt; Checkout As… 输入分支名称，就可以切换到对应分支了。<br><img src="https://i.imgur.com/97G8Qkh.png" alt=""></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitLab</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片操作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">仓库管理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/GitLab教程//" class="article-tag-list-link color4">GitLab教程</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/02/GitLab操作之IDEA中SVN项目转GitLab/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/27/GitLab导入本地项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GitLab导入本地项目</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/24/读取Linux上文件的内容/" class="archive-article-date">
-  	<time datetime="2018-10-24T02:19:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/24/读取Linux上文件的内容/">读取Linux上文件的内容</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件操作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "5FaP5VUpPTpHmnqQYEc440aS-gzGzoHsz",
+            app_key: "ak5HWLtA7Q8cykyeEyHxCJWP",
+            placeholder: "老铁，不想唠两句吗？",
+            avatar:"wavatar"
+        });
+    }
+</script>
+  </section>
+
 
 
           </div>
@@ -319,10 +422,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
