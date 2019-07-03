@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>GitLab导入本地项目 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
+  <meta name="description" content="前言　　最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
 <meta name="keywords" content="GitLab,仓库管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitLab导入本地项目">
 <meta property="og:url" content="http://yoursite.com/2019/06/27/GitLab导入本地项目/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="前言最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
+<meta property="og:description" content="前言　　最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/EjX45as.png">
-<meta property="og:updated_time" content="2019-06-27T07:15:32.280Z">
+<meta property="og:updated_time" content="2019-07-03T09:03:27.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitLab导入本地项目">
-<meta name="twitter:description" content="前言最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
+<meta name="twitter:description" content="前言　　最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。">
 <meta name="twitter:image" content="https://i.imgur.com/EjX45as.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
@@ -185,18 +185,18 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。<br><a id="more"></a></p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="1、在GitLab管理页面上先创建一个project。"><a href="#1、在GitLab管理页面上先创建一个project。" class="headerlink" title="1、在GitLab管理页面上先创建一个project。"></a>1、在GitLab管理页面上先创建一个project。</h4><p>这个比较简单，百度一大堆，这里就不做教程了。</p>
-<h4 id="2、初始化本地项目"><a href="#2、初始化本地项目" class="headerlink" title="2、初始化本地项目"></a>2、初始化本地项目</h4><p>进入本地项目目录中，执行命令：</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　最近由于公司要把svn更换为gitlab，所以近期研究了研究gitlab的用法。这里记录一下gitlab导入本地已存在的项目是如何操作的。<a id="more"></a></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="1、在GitLab管理页面上先创建一个project。"><a href="#1、在GitLab管理页面上先创建一个project。" class="headerlink" title="1、在GitLab管理页面上先创建一个project。"></a>1、在GitLab管理页面上先创建一个project。</h4><p>　　这个比较简单，百度一大堆，这里就不做教程了。</p>
+<h4 id="2、初始化本地项目"><a href="#2、初始化本地项目" class="headerlink" title="2、初始化本地项目"></a>2、初始化本地项目</h4><p>　　进入本地项目目录中，执行命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<p>执行完上面的命令之后会在目录中多出一个隐藏文件夹.git：<br><img src="https://i.imgur.com/EjX45as.png" alt=""></p>
-<h4 id="3、关联远程仓库"><a href="#3、关联远程仓库" class="headerlink" title="3、关联远程仓库"></a>3、关联远程仓库</h4><p>这里的远程仓库地址为第一步创建完project得到的仓库地址。有ssh的也有http的。</p>
+<p>　　执行完上面的命令之后会在目录中多出一个隐藏文件夹.git：<br>　　<img src="https://i.imgur.com/EjX45as.png" alt=""></p>
+<h4 id="3、关联远程仓库"><a href="#3、关联远程仓库" class="headerlink" title="3、关联远程仓库"></a>3、关联远程仓库</h4><p>　　这里的远程仓库地址为第一步创建完project得到的仓库地址。有ssh的也有http的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin 远程仓库地址</span><br></pre></td></tr></table></figure>
-<h4 id="4、本地项目文件添加至远程仓库"><a href="#4、本地项目文件添加至远程仓库" class="headerlink" title="4、本地项目文件添加至远程仓库"></a>4、本地项目文件添加至远程仓库</h4><p>这里“.”代表当前目录所有文件。 也可以输入具体需要提交的目录，使用空格隔开。</p>
+<h4 id="4、本地项目文件添加至远程仓库"><a href="#4、本地项目文件添加至远程仓库" class="headerlink" title="4、本地项目文件添加至远程仓库"></a>4、本地项目文件添加至远程仓库</h4><p>　　这里“.”代表当前目录所有文件。 也可以输入具体需要提交的目录，使用空格隔开。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
 <h4 id="5、提交代码"><a href="#5、提交代码" class="headerlink" title="5、提交代码"></a>5、提交代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"本次提交代码的注释"</span></span><br></pre></td></tr></table></figure>
 <h4 id="6、推送至远程master分支"><a href="#6、推送至远程master分支" class="headerlink" title="6、推送至远程master分支"></a>6、推送至远程master分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
-<p>在GitLab刚刚创建的project页面上刷新一下，就可以看到我们提交上去的项目文件了。</p>
+<p>　　在GitLab刚刚创建的project页面上刷新一下，就可以看到我们提交上去的项目文件了。</p>
 
       
 

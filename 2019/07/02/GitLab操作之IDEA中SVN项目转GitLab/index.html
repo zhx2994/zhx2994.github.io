@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>GitLab操作之IDEA中SVN项目转GitLab | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
+  <meta name="description" content="前言　　上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
 <meta name="keywords" content="GitLab,仓库管理,IDEA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitLab操作之IDEA中SVN项目转GitLab">
 <meta property="og:url" content="http://yoursite.com/2019/07/02/GitLab操作之IDEA中SVN项目转GitLab/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
+<meta property="og:description" content="前言　　上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/7sbueMf.png">
 <meta property="og:image" content="https://i.imgur.com/KjXOTyg.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="https://i.imgur.com/moGD94v.png">
 <meta property="og:image" content="https://i.imgur.com/tcdBU2f.png">
 <meta property="og:image" content="https://i.imgur.com/97G8Qkh.png">
-<meta property="og:updated_time" content="2019-07-02T09:54:00.356Z">
+<meta property="og:updated_time" content="2019-07-03T09:02:48.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitLab操作之IDEA中SVN项目转GitLab">
-<meta name="twitter:description" content="前言上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
+<meta name="twitter:description" content="前言　　上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。">
 <meta name="twitter:image" content="https://i.imgur.com/7sbueMf.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
@@ -191,19 +191,19 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。<a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　上节我们说了GitLab使用git命令行导入本地的项目，然而我们实际中经常会在我们的ide中去操作。这里我们就说说在IDEA中如何操作管理一个GitLab项目。<a id="more"></a></p>
 <hr>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="一、SVN项目转GitLab"><a href="#一、SVN项目转GitLab" class="headerlink" title="一、SVN项目转GitLab"></a>一、SVN项目转GitLab</h4><p>我们在IDEA中将一个已经关联SVN的项目导入到GitLab中。 首先我们需要在我们GitLab管理页面上先创建一个对应的project，获取到仓库地址。这一步就不做多叙述了。</p>
-<p>建立好project之后，我们打开IDEA，找到上方 VCS -&gt; Import into Version Control -&gt; Create Git Repository…<br><img src="https://i.imgur.com/7sbueMf.png" alt=""></p>
-<p>然后选择我们对应的项目目录，稍等IDEA下方的进度走完之后，右键项目可以看到已经多出了Git选项。之后我们就可以选择我们需要加入到GitLab中的文件，然后右键 -&gt; Git -&gt; Add. 将我们的文件加入到库。<br><img src="https://i.imgur.com/KjXOTyg.png" alt=""></p>
-<p>完成之后继续右键 -&gt; Git -&gt; Commit Files. 提交代码。<br><img src="https://i.imgur.com/A4rINCc.png" alt=""></p>
-<p>代码提交之后，我们就需要将我们的操作推送到对应的远程仓库了。右键 -&gt; Git -&gt; Repository -&gt; Push.<br><img src="https://i.imgur.com/mmsouHh.png" alt=""></p>
-<p>然后点击Define remote,在URL框中输入对应的远程仓库地址（即开始在GitLab管理页面上先创建的对应的project之后获取到的地址）。<br>之后我们点击Push。然后刷新远程仓库就可以看到我们的代码了。</p>
-<h4 id="二、检出GitLab远程仓库中的项目到本地"><a href="#二、检出GitLab远程仓库中的项目到本地" class="headerlink" title="二、检出GitLab远程仓库中的项目到本地"></a>二、检出GitLab远程仓库中的项目到本地</h4><p>点击 VCS -&gt; Checkout from Version Control -&gt; Git.<br><img src="https://i.imgur.com/moGD94v.png" alt=""></p>
-<p>然后在URL中输入远程仓库地址，在Directory中选择存放的本地目录，点击Clone。</p>
-<p>这样就将远程仓库中的项目检出到本地了。</p>
-<h4 id="三、切换分支"><a href="#三、切换分支" class="headerlink" title="三、切换分支"></a>三、切换分支</h4><p>在GitLab管理页面上创建好分支之后，在IDEA右键项目 -&gt; Git -&gt; Repository -&gt; Fetch.点击右下角如下位置，可以看到我们拥有的分支。<br><img src="https://i.imgur.com/tcdBU2f.png" alt=""></p>
-<p>点击对应分支 -&gt; Checkout As… 输入分支名称，就可以切换到对应分支了。<br><img src="https://i.imgur.com/97G8Qkh.png" alt=""></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="一、SVN项目转GitLab"><a href="#一、SVN项目转GitLab" class="headerlink" title="一、SVN项目转GitLab"></a>一、SVN项目转GitLab</h4><p>　　我们在IDEA中将一个已经关联SVN的项目导入到GitLab中。 首先我们需要在我们GitLab管理页面上先创建一个对应的project，获取到仓库地址。这一步就不做多叙述了。</p>
+<p>　　建立好project之后，我们打开IDEA，找到上方 VCS -&gt; Import into Version Control -&gt; Create Git Repository…<br>　　<img src="https://i.imgur.com/7sbueMf.png" alt=""></p>
+<p>　　然后选择我们对应的项目目录，稍等IDEA下方的进度走完之后，右键项目可以看到已经多出了Git选项。之后我们就可以选择我们需要加入到GitLab中的文件，然后右键 -&gt; Git -&gt; Add. 将我们的文件加入到库。<br>　　<img src="https://i.imgur.com/KjXOTyg.png" alt=""></p>
+<p>　　完成之后继续右键 -&gt; Git -&gt; Commit Files. 提交代码。<br>　　<img src="https://i.imgur.com/A4rINCc.png" alt=""></p>
+<p>　　代码提交之后，我们就需要将我们的操作推送到对应的远程仓库了。右键 -&gt; Git -&gt; Repository -&gt; Push.<br>　　<img src="https://i.imgur.com/mmsouHh.png" alt=""></p>
+<p>　　然后点击Define remote,在URL框中输入对应的远程仓库地址（即开始在GitLab管理页面上先创建的对应的project之后获取到的地址）。<br>　　之后我们点击Push。然后刷新远程仓库就可以看到我们的代码了。</p>
+<h4 id="二、检出GitLab远程仓库中的项目到本地"><a href="#二、检出GitLab远程仓库中的项目到本地" class="headerlink" title="二、检出GitLab远程仓库中的项目到本地"></a>二、检出GitLab远程仓库中的项目到本地</h4><p>　　点击 VCS -&gt; Checkout from Version Control -&gt; Git.<br>　　<img src="https://i.imgur.com/moGD94v.png" alt=""></p>
+<p>　　然后在URL中输入远程仓库地址，在Directory中选择存放的本地目录，点击Clone。</p>
+<p>　　这样就将远程仓库中的项目检出到本地了。</p>
+<h4 id="三、切换分支"><a href="#三、切换分支" class="headerlink" title="三、切换分支"></a>三、切换分支</h4><p>　　在GitLab管理页面上创建好分支之后，在IDEA右键项目 -&gt; Git -&gt; Repository -&gt; Fetch.点击右下角如下位置，可以看到我们拥有的分支。<br>　　<img src="https://i.imgur.com/tcdBU2f.png" alt=""></p>
+<p>　　点击对应分支 -&gt; Checkout As… 输入分支名称，就可以切换到对应分支了。<br>　　<img src="https://i.imgur.com/97G8Qkh.png" alt=""></p>
 
       
 
