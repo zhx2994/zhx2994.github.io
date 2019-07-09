@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Linux | 张海鑫的Blog</title>
+  <title>Java集成Apollo配置管理中心 | 张海鑫的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Harrison&apos;s blog | java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张海鑫的Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Linux/index.html">
+  <meta name="description" content="前言　　近日由于公司项目配置较多，发现管理起来十分繁琐。所以加入了Apollo来管理项目的配置文件。按照以前，我们改了项目的配置之后都需要重新启动项目来重新加载配置文件，这样在线上如果我们只是想改一个小的配置都要重启整个项目，这个太麻烦了。加入Apollo之后我们可以直接对项目的配置文件进行管理，然后修改之后发布至线上，不需要重启就可以搞到，非常的方便。">
+<meta name="keywords" content="Apollo,Java,插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java集成Apollo配置管理中心">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/Java集成Apollo配置管理中心/index.html">
 <meta property="og:site_name" content="张海鑫的Blog">
-<meta property="og:description" content="Harrison&apos;s blog | java">
+<meta property="og:description" content="前言　　近日由于公司项目配置较多，发现管理起来十分繁琐。所以加入了Apollo来管理项目的配置文件。按照以前，我们改了项目的配置之后都需要重新启动项目来重新加载配置文件，这样在线上如果我们只是想改一个小的配置都要重启整个项目，这个太麻烦了。加入Apollo之后我们可以直接对项目的配置文件进行管理，然后修改之后发布至线上，不需要重启就可以搞到，非常的方便。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/d9j4En3.png">
+<meta property="og:image" content="https://i.imgur.com/cO91muM.png">
+<meta property="og:image" content="https://i.imgur.com/iJ3bHOv.png">
+<meta property="og:image" content="https://i.imgur.com/YGJqBGl.png">
+<meta property="og:image" content="https://i.imgur.com/P8s4ZCE.png">
+<meta property="og:updated_time" content="2019-07-09T10:30:53.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张海鑫的Blog">
-<meta name="twitter:description" content="Harrison&apos;s blog | java">
+<meta name="twitter:title" content="Java集成Apollo配置管理中心">
+<meta name="twitter:description" content="前言　　近日由于公司项目配置较多，发现管理起来十分繁琐。所以加入了Apollo来管理项目的配置文件。按照以前，我们改了项目的配置之后都需要重新启动项目来重新加载配置文件，这样在线上如果我们只是想改一个小的配置都要重启整个项目，这个太麻烦了。加入Apollo之后我们可以直接对项目的配置文件进行管理，然后修改之后发布至线上，不需要重启就可以搞到，非常的方便。">
+<meta name="twitter:image" content="https://i.imgur.com/d9j4En3.png">
   
     <link rel="alternative" href="/atom.xml" title="张海鑫的Blog" type="application/atom+xml">
   
@@ -161,79 +169,343 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java集成Apollo配置管理中心" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/24/读取Linux上文件的内容/" class="archive-article-date">
-  	<time datetime="2018-10-24T02:19:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/24/读取Linux上文件的内容/">读取Linux上文件的内容</a>
+    <h1 class="article-title" itemprop="name">
+      Java集成Apollo配置管理中心
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/09/Java集成Apollo配置管理中心/" class="archive-article-date">
+  	<time datetime="2019-07-09T07:11:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　近日由于公司项目配置较多，发现管理起来十分繁琐。所以加入了Apollo来管理项目的配置文件。按照以前，我们改了项目的配置之后都需要重新启动项目来重新加载配置文件，这样在线上如果我们只是想改一个小的配置都要重启整个项目，这个太麻烦了。加入Apollo之后我们可以直接对项目的配置文件进行管理，然后修改之后发布至线上，不需要重启就可以搞到，非常的方便。<a id="more"></a></p>
+<hr>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h4><p>　　Apollo（阿波罗）是携程框架部门研发的分布式配置中心，能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景。</p>
+<p>　　服务端基于Spring Boot和Spring Cloud开发，打包后可以直接运行，不需要额外安装Tomcat等应用容器。</p>
+<p>　　Java客户端不依赖任何框架，能够运行于所有Java运行时环境，同时对Spring/Spring Boot环境也有较好的支持。</p>
+<p>　　.Net客户端不依赖任何框架，能够运行于所有.Net运行时环境。</p>
+<p>　　更多介绍参见<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener">Apollo配置中心介绍</a>。</p>
+<p>　　关于Java的开发指南可以参考<a href="https://github.com/ctripcorp/apollo/wiki/Java%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">Java客户端开发指南</a>。</p>
+<h4 id="2、环境要求"><a href="#2、环境要求" class="headerlink" title="2、环境要求"></a>2、环境要求</h4><p>　　2.1、Java 1.7+</p>
+<p>　　2.2、Guava 15.0+（Apollo客户端默认会引用Guava 19，如果你的项目引用了其它版本，请确保版本号大于等于15.0）</p>
+<h4 id="3、必要配置"><a href="#3、必要配置" class="headerlink" title="3、必要配置"></a>3、必要配置</h4><p>　　3.1、appid</p>
+<pre><code>appid是在Apollo管理页面上配置的。代表一个应用的身份信息，也就是每个应用都有一个自己的appid，不可以重复。
+</code></pre><p>　　四种配置方式：</p>
+<p>　　　　1、通过System Property传入app.id信息</p>
+<p>　　　　2、通过System Environment的APP_ID传入appid信息</p>
+<p>　　　　3、通过Spring Boot的application.properties文件配置app.id属性</p>
+<p>　　　　4、通过app.properties文件设置app.id属性，位置:classpath:/META-INF/app.properties</p>
+<p>　　3.2、meta sever</p>
+<pre><code>Apollo支持我们的应用在不同的环境有不同的配置，所以需要在运行告诉Apollo我们现在运行的是什么环境。
+</code></pre><p>　　配置方式：</p>
+<p>　　　　1、通过System Property传入apllo.mata信息</p>
+<p>　　　　2、通过Spring Boot的application.properties或者bootstrap.properties文件配置apllo.meta属性</p>
+<p>　　　　3、通过System Environment的APOLLO_META传入meta sever信息</p>
+<p>　　　　4、通过server.properties文件配置apollo.meta属性</p>
+<pre><code>对于Mac/Linux，文件位置为/opt/settings/server.properties
+对于Windows，文件位置为C:\opt\settings\server.properties
+</code></pre><p>　　　　5、通过app.properties文件设置apollo.meta属性，位置:classpath:/META-INF/app.properties</p>
+<p>　　　　6、还可以通过分环境的方式配置，具体参考<a href="https://github.com/ctripcorp/apollo/wiki/Java%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">Java客户端开发指南</a>。</p>
+<p>　　3.3、本地缓存路径</p>
+<pre><code>Apollo客户端会把从服务端获取到的配置在本地文件系统缓存一份，用于在遇到服务不可用，或网络不通的时候，依然能从本地恢复配置，不影响应用正常运行。
+
+本地缓存路径默认位于以下路径，所以请确保/opt/data或C:\opt\data\目录存在，且应用有读写权限，也可以通过设置自定义缓存路径。
+</code></pre><p>　　　　1、通过System Property传入apollo.cacheDir信息</p>
+<p>　　　　2、通过System Environment的APOLLO_CACHEDIR传入本地缓存路径信息</p>
+<p>　　　　3、通过Spring Boot的application.properties文件配置apollo.cacheDir属性</p>
+<p>　　　　　4、通过server.properties文件配置apollo.meta属性</p>
+<pre><code>对于Mac/Linux，文件位置为/opt/settings/server.properties
+对于Windows，文件位置为C:\opt\settings\server.properties
+</code></pre><h4 id="4、与SpringBoot项目集成"><a href="#4、与SpringBoot项目集成" class="headerlink" title="4、与SpringBoot项目集成"></a>4、与SpringBoot项目集成</h4><p>　　Apollo与SpringBoot项目集成十分简单，我们在Apollo管理页面上建立好我们的应用之后。 得到AppId，这里假设我们的AppId为：apollo_test </p>
+<p>　　加入项目依赖包:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-context&lt;/artifactId&gt;
+    &lt;version&gt;1.3.1.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.ctrip.framework.apollo&lt;/groupId&gt;
+    &lt;artifactId&gt;apollo-client&lt;/artifactId&gt;
+    &lt;version&gt;1.3.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>　　在application.properties中加入配置：</p>
+<pre><code>app.id=apollo_test #指定在Apollo管理页面上创建完应用的appId
+apollo.cacheDir=/opt/ourpalm/data/apollo/config-cache #自定义本地缓存路径
+apollo.meta=http://test-apollo.gamebean.net #指定环境 这里的meta地址是需要在Apollo管理页面上配置好的
+apollo.bootstrap.enabled=true 
+apollo.bootstrap.namespaces=application.properties,apollo_test.properties #指定Apollo管理的配置文件
+</code></pre><p>　　加入实时监测配置文件变化：</p>
+<pre><code>@Component
+@EnableApolloConfig
+public class SpringBootApolloRefreshConfig implements ApplicationContextAware {
+    private static final Logger logger = LoggerFactory.getLogger(SpringBootApolloRefreshConfig.class);
+    private ApplicationContext applicationContext;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    @ApolloConfigChangeListener({&quot;application.properties&quot;,&quot;apollo_test.properties&quot;}) // 监测的配置文件
+    public void onChange(ConfigChangeEvent changeEvent) { // 配置文件变更时触发此方法
+        logger.info(&quot;ApolloConfigChangeListener refresh config!&quot;);
+        for(String event :changeEvent.changedKeys())
+        {
+            logger.info(&quot;changedKey:{}&quot;,event);
+        }
+        this.applicationContext.publishEvent(new EnvironmentChangeEvent(changeEvent.changedKeys()));
+    }
+}
+</code></pre><h4 id="5、测试"><a href="#5、测试" class="headerlink" title="5、测试"></a>5、测试</h4><p>　　新建测试Bean:</p>
+<pre><code>@Component
+@Data
+public class TestConfig { // 测试Bean
+
+    @Value(&quot;${test:123}&quot;) // 接取配置文件中test属性的值，如果没有配置默认为123
+    private String test;
+
+}
+</code></pre><p>　　新建测试接口：</p>
+<pre><code>@RequestMapping(value = { &quot;test2/*/*&quot; })
+@Controller
+public class TestController {
+
+    private static OPLog log = OPLog.getLog(TestController.class);
+
+    @Autowired
+    TestConfig testConfig;
+
+    /**
+     * 测试方法
+     */
+    @RequestMapping(value = { &quot;/test2/apollo/test&quot;})
+    @ResponseBody
+    public String test() {
+
+        log.info(&quot;test的值:&quot; + testConfig.getTest());
+
+        return testConfig.getTest();
+    }
+
+}
+</code></pre><p>　　在Apollo管理页面中对应环境的apollo_test配置文件下，在实例列表中可以看到读取当前配置文件的实例。然后我们新增配置：</p>
+<p>　　<img src="https://i.imgur.com/d9j4En3.png" alt=""></p>
+<p>　　新增属性test，值为：Apollo First Test,并选择需要发布的环境，这里DEV代表开发环境，FAT代表测试环境，PRO代表正式环境。</p>
+<p>　　<img src="https://i.imgur.com/cO91muM.png" alt=""></p>
+<p>　　提交，然后发布。发布之后可以看到项目控制台输出：</p>
+<p>　　<img src="https://i.imgur.com/iJ3bHOv.png" alt=""></p>
+<p>　　请求测试接口返回：</p>
+<p>　　<img src="https://i.imgur.com/YGJqBGl.png" alt=""></p>
+<p>　　在Apollo管理页面修改test属性值为：Apollo Second Test，提交发布之后再次请求接口返回(无需重启项目)：</p>
+<p>　　<img src="https://i.imgur.com/P8s4ZCE.png" alt=""></p>
+<p>　　关于Apollo管理页面的搭建，请大家参考<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener">Apollo配置中心介绍</a>，后续更新管理页面搭建的博文。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Apollo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件操作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/Apollo//" class="article-tag-list-link color2">Apollo</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/09/Java集成Apollo配置管理中心/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/07/04/Jenkins-GitLab自动化部署/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jenkins+GitLab自动化部署</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "5FaP5VUpPTpHmnqQYEc440aS-gzGzoHsz",
+            app_key: "ak5HWLtA7Q8cykyeEyHxCJWP",
+            placeholder: "老铁，不想唠两句吗？",
+            avatar:"wavatar"
+        });
+    }
+</script>
+  </section>
+
 
 
           </div>
@@ -256,9 +528,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
