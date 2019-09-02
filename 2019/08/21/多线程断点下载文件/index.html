@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Harrison&#39;s Blog">
 <meta property="og:description" content="前言　　断点续传，项目需要。 代码记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T02:06:50.805Z">
+<meta property="og:updated_time" content="2019-09-02T06:14:15.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程断点下载文件">
 <meta name="twitter:description" content="前言　　断点续传，项目需要。 代码记录">
@@ -185,89 +185,7 @@ var _hmt = _hmt || [];
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　断点续传，项目需要。 代码记录<br><a id="more"></a></p>
 <hr>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><pre><code>package cn.itcast.download;
-
-import java.io.File;
-import java.io.InputStream;
-import java.io.RandomAccessFile;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-public class MulThreadDownloader { 
-
-public static void main(String[] args) throws Exception {
-    String path = &quot;http://192.168.1.100:8080/web/QQWubiSetup.exe&quot;;
-    int threadsize = 3;
-    new MulThreadDownloader().download(path, threadsize);
-
-}
-
-private void download(String path, int threadsize) throws Exception {
-    URL downpath = new URL(path);
-    HttpURLConnection conn = (HttpURLConnection) downpath.openConnection();
-    conn.setConnectTimeout(5000);
-    conn.setRequestMethod(&quot;GET&quot;);
-    if(conn.getResponseCode() == 200){
-        int length = conn.getContentLength();//获取网络文件的长度
-        File file = new File(getFileName(path));
-        RandomAccessFile accessFile = new RandomAccessFile(file, &quot;rwd&quot;);//生成本地文件
-        accessFile.setLength(length);
-        accessFile.close();
-        //计算每条线程负责下载的数据量
-        int block = length % threadsize == 0 ? length / threadsize : length / threadsize +1;
-        for(int threadid = 0 ; threadid &lt; threadsize ; threadid++){
-            new DownloadThread(threadid, downpath, block, file).start();
-        }
-    }
-}
-//负责下载操作
-private final class DownloadThread extends Thread{
-    private int threadid;
-    private URL downpath;
-    private int block;
-    private File file;
-
-    public DownloadThread(int threadid, URL downpath, int block, File file) {
-        this.threadid = threadid;
-        this.downpath = downpath;
-        this.block = block;
-        this.file = file;
-    }
-    public void run() {
-        int startposition = threadid * block;//从网络文件的什么位置开始下载数据
-        int endposition = (threadid+1) * block - 1;//下载到网络文件的什么位置结束
-        //指示该线程要从网络文件的startposition位置开始下载，下载到endposition位置结束
-        //Range:bytes=startposition-endposition
-        try{
-            RandomAccessFile accessFile = new RandomAccessFile(file, &quot;rwd&quot;);
-            accessFile.seek(startposition);//移动指针到文件的某个位置
-            HttpURLConnection conn = (HttpURLConnection) downpath.openConnection();
-            conn.setConnectTimeout(5000);
-            conn.setRequestMethod(&quot;GET&quot;);
-            conn.setRequestProperty(&quot;Range&quot;, &quot;bytes=&quot;+ startposition+ &quot;-&quot;+ endposition);
-            InputStream inStream = conn.getInputStream();
-            byte[] buffer = new byte[1024];
-            int len = 0;
-            while( (len = inStream.read(buffer)) != -1 ){
-                accessFile.write(buffer, 0, len);
-            }
-            accessFile.close();
-            inStream.close();
-            System.out.println(&quot;第&quot;+ (threadid+1)+ &quot;线程下载完成&quot;);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
-/**
- * 获取文件名称
- * @param path 下载路径
- * @return
- */
-private static String getFileName(String path) {
-    return path.substring(path.lastIndexOf(&quot;/&quot;)+ 1);
-}
-</code></pre><p>}</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast.download;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.RandomAccessFile;</span><br><span class="line"><span class="keyword">import</span> java.net.HttpURLConnection;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MulThreadDownloader</span> </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String path = <span class="string">"http://192.168.1.100:8080/web/QQWubiSetup.exe"</span>;</span><br><span class="line">        <span class="keyword">int</span> threadsize = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">new</span> MulThreadDownloader().download(path, threadsize);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">(String path, <span class="keyword">int</span> threadsize)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        URL downpath = <span class="keyword">new</span> URL(path);</span><br><span class="line">        HttpURLConnection conn = (HttpURLConnection) downpath.openConnection();</span><br><span class="line">        conn.setConnectTimeout(<span class="number">5000</span>);</span><br><span class="line">        conn.setRequestMethod(<span class="string">"GET"</span>);</span><br><span class="line">        <span class="keyword">if</span>(conn.getResponseCode() == <span class="number">200</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> length = conn.getContentLength();<span class="comment">//获取网络文件的长度</span></span><br><span class="line">            File file = <span class="keyword">new</span> File(getFileName(path));</span><br><span class="line">            RandomAccessFile accessFile = <span class="keyword">new</span> RandomAccessFile(file, <span class="string">"rwd"</span>);<span class="comment">//生成本地文件</span></span><br><span class="line">            accessFile.setLength(length);</span><br><span class="line">            accessFile.close();</span><br><span class="line">            <span class="comment">//计算每条线程负责下载的数据量</span></span><br><span class="line">            <span class="keyword">int</span> block = length % threadsize == <span class="number">0</span> ? length / threadsize : length / threadsize +<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> threadid = <span class="number">0</span> ; threadid &lt; threadsize ; threadid++)&#123;</span><br><span class="line">                <span class="keyword">new</span> DownloadThread(threadid, downpath, block, file).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//负责下载操作</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DownloadThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> threadid;</span><br><span class="line">        <span class="keyword">private</span> URL downpath;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> block;</span><br><span class="line">        <span class="keyword">private</span> File file;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">DownloadThread</span><span class="params">(<span class="keyword">int</span> threadid, URL downpath, <span class="keyword">int</span> block, File file)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.threadid = threadid;</span><br><span class="line">            <span class="keyword">this</span>.downpath = downpath;</span><br><span class="line">            <span class="keyword">this</span>.block = block;</span><br><span class="line">            <span class="keyword">this</span>.file = file;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> startposition = threadid * block;<span class="comment">//从网络文件的什么位置开始下载数据</span></span><br><span class="line">            <span class="keyword">int</span> endposition = (threadid+<span class="number">1</span>) * block - <span class="number">1</span>;<span class="comment">//下载到网络文件的什么位置结束</span></span><br><span class="line">            <span class="comment">//指示该线程要从网络文件的startposition位置开始下载，下载到endposition位置结束</span></span><br><span class="line">            <span class="comment">//Range:bytes=startposition-endposition</span></span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                RandomAccessFile accessFile = <span class="keyword">new</span> RandomAccessFile(file, <span class="string">"rwd"</span>);</span><br><span class="line">                accessFile.seek(startposition);<span class="comment">//移动指针到文件的某个位置</span></span><br><span class="line">                HttpURLConnection conn = (HttpURLConnection) downpath.openConnection();</span><br><span class="line">                conn.setConnectTimeout(<span class="number">5000</span>);</span><br><span class="line">                conn.setRequestMethod(<span class="string">"GET"</span>);</span><br><span class="line">                conn.setRequestProperty(<span class="string">"Range"</span>, <span class="string">"bytes="</span>+ startposition+ <span class="string">"-"</span>+ endposition);</span><br><span class="line">                InputStream inStream = conn.getInputStream();</span><br><span class="line">                <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>( (len = inStream.read(buffer)) != -<span class="number">1</span> )&#123;</span><br><span class="line">                    accessFile.write(buffer, <span class="number">0</span>, len);</span><br><span class="line">                &#125;</span><br><span class="line">                accessFile.close();</span><br><span class="line">                inStream.close();</span><br><span class="line">                System.out.println(<span class="string">"第"</span>+ (threadid+<span class="number">1</span>)+ <span class="string">"线程下载完成"</span>);</span><br><span class="line">            &#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取文件名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path 下载路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getFileName</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> path.substring(path.lastIndexOf(<span class="string">"/"</span>)+ <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
