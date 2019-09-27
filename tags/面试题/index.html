@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>聊天信息实时监控 | Harrison&#39;s Blog</title>
+  <title>Tag: 面试题 | Harrison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
-<meta name="keywords" content="技术点,架构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="聊天信息实时监控">
-<meta property="og:url" content="http://yoursite.com/2019/07/18/聊天信息实时监控/index.html">
+  <meta name="description" content="Harrison&apos;s blog | java">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Harrison&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/面试题/index.html">
 <meta property="og:site_name" content="Harrison&#39;s Blog">
-<meta property="og:description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
+<meta property="og:description" content="Harrison&apos;s blog | java">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-26T03:15:23.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊天信息实时监控">
-<meta name="twitter:description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
+<meta name="twitter:title" content="Harrison&#39;s Blog">
+<meta name="twitter:description" content="Harrison&apos;s blog | java">
   
     <link rel="alternative" href="/atom.xml" title="Harrison&#39;s Blog" type="application/atom+xml">
   
@@ -163,267 +161,75 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-聊天信息实时监控" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      聊天信息实时监控
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/09/27/一次面试的面试题记录/" class="archive-article-date">
+  	<time datetime="2019-09-27T06:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/09/27/一次面试的面试题记录/">一次面试的面试题记录</a>
     </h1>
   
 
-        
-        <a href="/2019/07/18/聊天信息实时监控/" class="archive-article-date">
-  	<time datetime="2019-07-18T06:31:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="链接建立"><a href="#链接建立" class="headerlink" title="链接建立"></a>链接建立</h5><ul>
-<li>技术承载：HTTP+websocket</li>
-<li>技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；<a id="more"></a></li>
-<li>网络元素： 浏览器页面 新版账户控制端 GSC聊天代理</li>
-<li>ticket ： ticket有效时长5分钟，使用一次后自动失效，由平台账户系统控制；</li>
-<li>websocketKey ：每条websocket的标识，由websocket服务端生成；</li>
-<li>chatRoomId ：每个聊天监控窗口的ID，在同一个浏览器页面上唯一，由客户端生成；</li>
-</ul>
-<ol>
-<li>用户选择产品、区服、频道点击实时监控，浏览器页面通过HTTP请求平台账户系统获取开启实时监控必要数据（ticket和聊天监控服务地址）；</li>
-<li>浏览器页面根据返回的聊天监控服务地址判断是否需要建立新的websocket，如果不需要则直接通过第5步更新websocket传输的数据内容；</li>
-<li>浏览器页面携带ticket以及chatRoomId去和聊天监控服务建立websocket链接；</li>
-<li>聊天代理通过HTTP请求平台账户系统验证ticket的合法性；验证通过后，生成websocketKey并和浏览器页面建立websocket链接（过程略）；</li>
-<li>浏览器页面通过HTTP请求更新websocket的数据传输内容；通过websocketKey来增加或删除chatRoomId；增加时还需要传递游戏产品、游戏区服、游戏频道信息；</li>
-</ol>
-<h5 id="浏览器页面-数据分发"><a href="#浏览器页面-数据分发" class="headerlink" title="浏览器页面 数据分发"></a>浏览器页面 数据分发</h5><ul>
-<li>元素：数据消费tab 数据分发Main</li>
-<li>事件：gamechat_chatRoomId_event</li>
-<li>考虑页面上会存在多个聊天监控tab， 每个聊天监控的 数据消费tab注册gamechat_chatRoomId_event监听事件； 数据分发Main在接到websocket的消息后根据chatRoomId进行消息发布；</li>
-</ul>
-<h5 id="聊天代理数据推送"><a href="#聊天代理数据推送" class="headerlink" title="聊天代理数据推送"></a>聊天代理数据推送</h5><ul>
-<li>在内存中维护一份浏览器页面的websocketKey和chatRoomId关系；Hash表即可， key：产品+语言+游戏服+频道， value是websocketKey+chatRoomId的list；</li>
-<li>在更新完solr后, 进行自动禁言；自动禁言处理完成后， 从Hash表中获取本次聊天记录是否存在监控的chatRoomId，存在的话，获取到websocketKey对应的websocket链接，把消息推下去；推送下去的聊天消息中需要携带chatRoomId; </li>
-</ul>
-<h4 id="聊天日志实时监控采用WebScoket进行实时推送聊天数据"><a href="#聊天日志实时监控采用WebScoket进行实时推送聊天数据" class="headerlink" title="聊天日志实时监控采用WebScoket进行实时推送聊天数据"></a>聊天日志实时监控采用WebScoket进行实时推送聊天数据</h4><p>采用spring的Websocket + SockJs + Stomp协议实现。<br>加入jar包:spring-websocket-4.2.4.RELEASE.jar、spring-messaging-4.2.4.RELEASE.jar<br>实现过程： </p>
-<pre><code>1. 建立WebSocketConfig，配置以下参数：
-    ① WebSocket客户端向服务端发送信息固定前缀
-    ② 服务端向客户端推送消息固定前缀
-    ③ WebSocket订阅地址前缀
-    ④ WebSocket连接地址（并配置允许SockJs连接以及加入拦截器）
-2.建立WebSocketInterceptor,拦截器中加入连接WebSocket之前与连接之后的操作
-3.建立Controller，加入@MessageMapping的方法用于接收与处理客户端发送的信息
-4.(可选)建立StompDisconnectEventListener，监听连接断开时进行操作。
-</code></pre><p>至此，WebSocket服务端建立完毕。</p>
-<p>聊天日志实时监控WebSocket客户端连接及消息推送:</p>
-<p>一、携带ticket请求webSocket连接。WebSocket连接地址:<br> ws://127.0.0.1:7380/chatproxy/websocket/connect</p>
-<p>二、订阅实时监控 订阅地址: /client/gameChat/monitoring</p>
-<p>三、向webSocket服务端发送消息新增chatRoomId<br>  发送地址:/server/addOrDelChatRoomId<br>  参数以消息形式发送(Json格式)：如：<br>  {<br>   “chatRoomId”:”1”,<br>   “productId”:”10000941”,<br>   “localeId”:”01”,<br>   “serverIds”:”2548,2549,2550”(游戏服为全部时传-1即可)<br>  }</p>
-<p>四、删除chatRoomId时同第三步， 删除时游戏服可不传。</p>
-<p>五、webSocket推送数据返回格式:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"chatRoomIds"</span>:[</span><br><span class="line">        <span class="string">"1"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"chatLogs"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"language"</span>:<span class="string">"01"</span>,</span><br><span class="line">            <span class="attr">"productId"</span>:<span class="string">"1111111"</span>,</span><br><span class="line">            <span class="attr">"productName"</span>:<span class="string">"测试"</span>,</span><br><span class="line">            <span class="attr">"gameServerId"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"gameServerName"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"userId"</span>:<span class="string">"111111111111111111111"</span>,</span><br><span class="line">            <span class="attr">"roleId"</span>:<span class="string">"1231232132131"</span>,</span><br><span class="line">            <span class="attr">"roleName"</span>:<span class="string">"test"</span>,</span><br><span class="line">            <span class="attr">"chatTime"</span>:<span class="string">"2019-07-22 17:04:58"</span>,</span><br><span class="line">            <span class="attr">"createTime"</span>:<span class="string">"2019-07-22 17:04:58"</span>,</span><br><span class="line">            <span class="attr">"gameChannelId"</span>:<span class="string">""</span>,</span><br><span class="line">            <span class="attr">"gameChannelName"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"chatInfo"</span>:<span class="string">"测试聊天信息"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wxpay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术点</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技术点//" class="article-tag-list-link color4">技术点</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/聊天信息实时监控/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/07/30/Grafana-Kid数据上报组件集成介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Grafana:Kid数据上报组件集成介绍
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/07/17/HTTP跨域值CORS/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTTP跨域值CORS</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  
-  
-    <section id="comments" class="comments">
-      <style>
-        .comments{margin:30px;padding:10px;background:#fff}
-        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-      </style>
-      <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "5FaP5VUpPTpHmnqQYEc440aS-gzGzoHsz",
-            app_key: "ak5HWLtA7Q8cykyeEyHxCJWP",
-            placeholder: "老铁，不想唠两句吗？",
-            avatar:"wavatar"
-        });
-    }
-</script>
-  </section>
-
+    
 
 
           </div>
@@ -446,9 +252,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

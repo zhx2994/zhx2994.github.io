@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>聊天信息实时监控 | Harrison&#39;s Blog</title>
+  <title>一次面试的面试题记录 | Harrison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
-<meta name="keywords" content="技术点,架构">
+  <meta name="description" content="前言　　记录一下最近面试做的笔试题，以备后面忘掉可以学习。">
+<meta name="keywords" content="Java,面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聊天信息实时监控">
-<meta property="og:url" content="http://yoursite.com/2019/07/18/聊天信息实时监控/index.html">
+<meta property="og:title" content="一次面试的面试题记录">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/一次面试的面试题记录/index.html">
 <meta property="og:site_name" content="Harrison&#39;s Blog">
-<meta property="og:description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
+<meta property="og:description" content="前言　　记录一下最近面试做的笔试题，以备后面忘掉可以学习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-26T03:15:23.368Z">
+<meta property="og:updated_time" content="2019-09-27T07:21:10.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊天信息实时监控">
-<meta name="twitter:description" content="链接建立 技术承载：HTTP+websocket 技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；">
+<meta name="twitter:title" content="一次面试的面试题记录">
+<meta name="twitter:description" content="前言　　记录一下最近面试做的笔试题，以备后面忘掉可以学习。">
   
     <link rel="alternative" href="/atom.xml" title="Harrison&#39;s Blog" type="application/atom+xml">
   
@@ -163,66 +163,160 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-聊天信息实时监控" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-一次面试的面试题记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      聊天信息实时监控
+      一次面试的面试题记录
     </h1>
   
 
         
-        <a href="/2019/07/18/聊天信息实时监控/" class="archive-article-date">
-  	<time datetime="2019-07-18T06:31:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+        <a href="/2019/09/27/一次面试的面试题记录/" class="archive-article-date">
+  	<time datetime="2019-09-27T06:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="链接建立"><a href="#链接建立" class="headerlink" title="链接建立"></a>链接建立</h5><ul>
-<li>技术承载：HTTP+websocket</li>
-<li>技术关键点：同一个浏览器页面和同一个服务端只建立一条websocket，可以通过HTTP请求动态增加或减少websocket传输的数据内容；数据内容自身具备数据类型分辨能力；<a id="more"></a></li>
-<li>网络元素： 浏览器页面 新版账户控制端 GSC聊天代理</li>
-<li>ticket ： ticket有效时长5分钟，使用一次后自动失效，由平台账户系统控制；</li>
-<li>websocketKey ：每条websocket的标识，由websocket服务端生成；</li>
-<li>chatRoomId ：每个聊天监控窗口的ID，在同一个浏览器页面上唯一，由客户端生成；</li>
-</ul>
-<ol>
-<li>用户选择产品、区服、频道点击实时监控，浏览器页面通过HTTP请求平台账户系统获取开启实时监控必要数据（ticket和聊天监控服务地址）；</li>
-<li>浏览器页面根据返回的聊天监控服务地址判断是否需要建立新的websocket，如果不需要则直接通过第5步更新websocket传输的数据内容；</li>
-<li>浏览器页面携带ticket以及chatRoomId去和聊天监控服务建立websocket链接；</li>
-<li>聊天代理通过HTTP请求平台账户系统验证ticket的合法性；验证通过后，生成websocketKey并和浏览器页面建立websocket链接（过程略）；</li>
-<li>浏览器页面通过HTTP请求更新websocket的数据传输内容；通过websocketKey来增加或删除chatRoomId；增加时还需要传递游戏产品、游戏区服、游戏频道信息；</li>
-</ol>
-<h5 id="浏览器页面-数据分发"><a href="#浏览器页面-数据分发" class="headerlink" title="浏览器页面 数据分发"></a>浏览器页面 数据分发</h5><ul>
-<li>元素：数据消费tab 数据分发Main</li>
-<li>事件：gamechat_chatRoomId_event</li>
-<li>考虑页面上会存在多个聊天监控tab， 每个聊天监控的 数据消费tab注册gamechat_chatRoomId_event监听事件； 数据分发Main在接到websocket的消息后根据chatRoomId进行消息发布；</li>
-</ul>
-<h5 id="聊天代理数据推送"><a href="#聊天代理数据推送" class="headerlink" title="聊天代理数据推送"></a>聊天代理数据推送</h5><ul>
-<li>在内存中维护一份浏览器页面的websocketKey和chatRoomId关系；Hash表即可， key：产品+语言+游戏服+频道， value是websocketKey+chatRoomId的list；</li>
-<li>在更新完solr后, 进行自动禁言；自动禁言处理完成后， 从Hash表中获取本次聊天记录是否存在监控的chatRoomId，存在的话，获取到websocketKey对应的websocket链接，把消息推下去；推送下去的聊天消息中需要携带chatRoomId; </li>
-</ul>
-<h4 id="聊天日志实时监控采用WebScoket进行实时推送聊天数据"><a href="#聊天日志实时监控采用WebScoket进行实时推送聊天数据" class="headerlink" title="聊天日志实时监控采用WebScoket进行实时推送聊天数据"></a>聊天日志实时监控采用WebScoket进行实时推送聊天数据</h4><p>采用spring的Websocket + SockJs + Stomp协议实现。<br>加入jar包:spring-websocket-4.2.4.RELEASE.jar、spring-messaging-4.2.4.RELEASE.jar<br>实现过程： </p>
-<pre><code>1. 建立WebSocketConfig，配置以下参数：
-    ① WebSocket客户端向服务端发送信息固定前缀
-    ② 服务端向客户端推送消息固定前缀
-    ③ WebSocket订阅地址前缀
-    ④ WebSocket连接地址（并配置允许SockJs连接以及加入拦截器）
-2.建立WebSocketInterceptor,拦截器中加入连接WebSocket之前与连接之后的操作
-3.建立Controller，加入@MessageMapping的方法用于接收与处理客户端发送的信息
-4.(可选)建立StompDisconnectEventListener，监听连接断开时进行操作。
-</code></pre><p>至此，WebSocket服务端建立完毕。</p>
-<p>聊天日志实时监控WebSocket客户端连接及消息推送:</p>
-<p>一、携带ticket请求webSocket连接。WebSocket连接地址:<br> ws://127.0.0.1:7380/chatproxy/websocket/connect</p>
-<p>二、订阅实时监控 订阅地址: /client/gameChat/monitoring</p>
-<p>三、向webSocket服务端发送消息新增chatRoomId<br>  发送地址:/server/addOrDelChatRoomId<br>  参数以消息形式发送(Json格式)：如：<br>  {<br>   “chatRoomId”:”1”,<br>   “productId”:”10000941”,<br>   “localeId”:”01”,<br>   “serverIds”:”2548,2549,2550”(游戏服为全部时传-1即可)<br>  }</p>
-<p>四、删除chatRoomId时同第三步， 删除时游戏服可不传。</p>
-<p>五、webSocket推送数据返回格式:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"chatRoomIds"</span>:[</span><br><span class="line">        <span class="string">"1"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"chatLogs"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"id"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"language"</span>:<span class="string">"01"</span>,</span><br><span class="line">            <span class="attr">"productId"</span>:<span class="string">"1111111"</span>,</span><br><span class="line">            <span class="attr">"productName"</span>:<span class="string">"测试"</span>,</span><br><span class="line">            <span class="attr">"gameServerId"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"gameServerName"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"userId"</span>:<span class="string">"111111111111111111111"</span>,</span><br><span class="line">            <span class="attr">"roleId"</span>:<span class="string">"1231232132131"</span>,</span><br><span class="line">            <span class="attr">"roleName"</span>:<span class="string">"test"</span>,</span><br><span class="line">            <span class="attr">"chatTime"</span>:<span class="string">"2019-07-22 17:04:58"</span>,</span><br><span class="line">            <span class="attr">"createTime"</span>:<span class="string">"2019-07-22 17:04:58"</span>,</span><br><span class="line">            <span class="attr">"gameChannelId"</span>:<span class="string">""</span>,</span><br><span class="line">            <span class="attr">"gameChannelName"</span>:<span class="literal">null</span>,</span><br><span class="line">            <span class="attr">"chatInfo"</span>:<span class="string">"测试聊天信息"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　记录一下最近面试做的笔试题，以备后面忘掉可以学习。 <a id="more"></a></p>
+<hr>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h3 id="1-Java中定义两个字符串，String-str1-“abc”-String-str2-“abc”-分别写出用“-”和“equals”比较这两个字符串的结果；"><a href="#1-Java中定义两个字符串，String-str1-“abc”-String-str2-“abc”-分别写出用“-”和“equals”比较这两个字符串的结果；" class="headerlink" title="1.Java中定义两个字符串，String str1 = “abc”;  String str2 = “abc”;  分别写出用“==”和“equals”比较这两个字符串的结果；"></a>1.Java中定义两个字符串，String str1 = “abc”;  String str2 = “abc”;  分别写出用“==”和“equals”比较这两个字符串的结果；</h3><pre><code>答：“==”结果为true，“==”比较地址值，因为有常量池所以为true。equals结果为true，比较字符串值
+</code></pre><h3 id="2-简单解释java中异常的继承体系结构；并列出常见的5种运行时异常；"><a href="#2-简单解释java中异常的继承体系结构；并列出常见的5种运行时异常；" class="headerlink" title="2.简单解释java中异常的继承体系结构；并列出常见的5种运行时异常；"></a>2.简单解释java中异常的继承体系结构；并列出常见的5种运行时异常；</h3><pre><code>答：Thorwable是所有异常和错误的父类，有两个子类为Error和Exception，分别表示错误和异常。
+    常见异常有：
+        - ClassNotFountException
+        - IndexOutOfBoundsException
+        - NullPointException
+        - NumberFormatException
+        - ClassCastException
+</code></pre><h3 id="3-nbsp-List-list-new-ArrayList-nbsp-nbsp-nbsp-nbsp-Person-p1-new-Person-nbsp-nbsp-nbsp-nbsp-p1-setName-“zhouxingchi”-nbsp-nbsp-nbsp-nbsp-Person-p2-new-Person-nbsp-nbsp-nbsp-nbsp-p2-setName-“liudehua”-nbsp-nbsp-nbsp-nbsp-Person-p3-new-Person-nbsp-nbsp-nbsp-nbsp-p3-setName-“zhourunfa”-nbsp-nbsp-nbsp-nbsp-list-add-p1-nbsp-nbsp-nbsp-nbsp-list-add-p2-nbsp-nbsp-nbsp-nbsp-list-add-p3-nbsp-nbsp-nbsp-nbsp-请使用JAVA编写代码进行删除list中name为“liudehua”的Person对象；"><a href="#3-nbsp-List-list-new-ArrayList-nbsp-nbsp-nbsp-nbsp-Person-p1-new-Person-nbsp-nbsp-nbsp-nbsp-p1-setName-“zhouxingchi”-nbsp-nbsp-nbsp-nbsp-Person-p2-new-Person-nbsp-nbsp-nbsp-nbsp-p2-setName-“liudehua”-nbsp-nbsp-nbsp-nbsp-Person-p3-new-Person-nbsp-nbsp-nbsp-nbsp-p3-setName-“zhourunfa”-nbsp-nbsp-nbsp-nbsp-list-add-p1-nbsp-nbsp-nbsp-nbsp-list-add-p2-nbsp-nbsp-nbsp-nbsp-list-add-p3-nbsp-nbsp-nbsp-nbsp-请使用JAVA编写代码进行删除list中name为“liudehua”的Person对象；" class="headerlink" title="3.&nbsp;List list = new ArrayList();&nbsp;&nbsp;&nbsp;&nbsp;Person p1 = new Person();&nbsp;&nbsp;&nbsp;&nbsp;p1.setName(“zhouxingchi”);&nbsp;&nbsp;&nbsp;&nbsp;Person p2 = new Person();&nbsp;&nbsp;&nbsp;&nbsp;p2.setName(“liudehua”); &nbsp;&nbsp;&nbsp;&nbsp;Person p3 = new Person();&nbsp;&nbsp;&nbsp;&nbsp;p3.setName(“zhourunfa”);&nbsp;&nbsp;&nbsp;&nbsp;list.add(p1);&nbsp;&nbsp;&nbsp;&nbsp;list.add(p2);&nbsp;&nbsp;&nbsp;&nbsp;list.add(p3);&nbsp;&nbsp;&nbsp;&nbsp;请使用JAVA编写代码进行删除list中name为“liudehua”的Person对象；"></a>3.&nbsp;List<person> list = new ArrayList<person>();<br>&nbsp;&nbsp;&nbsp;&nbsp;Person p1 = new Person();<br>&nbsp;&nbsp;&nbsp;&nbsp;p1.setName(“zhouxingchi”);<br>&nbsp;&nbsp;&nbsp;&nbsp;Person p2 = new Person();<br>&nbsp;&nbsp;&nbsp;&nbsp;p2.setName(“liudehua”); <br>&nbsp;&nbsp;&nbsp;&nbsp;Person p3 = new Person();<br>&nbsp;&nbsp;&nbsp;&nbsp;p3.setName(“zhourunfa”);<br>&nbsp;&nbsp;&nbsp;&nbsp;list.add(p1);<br>&nbsp;&nbsp;&nbsp;&nbsp;list.add(p2);<br>&nbsp;&nbsp;&nbsp;&nbsp;list.add(p3);<br>&nbsp;&nbsp;&nbsp;&nbsp;请使用JAVA编写代码进行删除list中name为“liudehua”的Person对象；</person></person></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.removeIf(person -&gt; <span class="string">"liudehua"</span>.equals(person.getName()));</span><br></pre></td></tr></table></figure>
+<h3 id="4-Data-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-public-static-class-Book-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-private-String-name-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-private-Integer-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-public-Book-String-name-int-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-this-name-name-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-this-price-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-List-bookList-Arrays-asList-new-Book-“Java从入门到精通”-55-new-Book-“深入理解Java虚拟机”-60-new-Book-“Java从入门到精通”-50-new-Book-“深入理解Java虚拟机”-65-nbsp-nbsp-nbsp-请使用JAVA-Stream-API-筛选出上述书籍价格最便宜的书籍列表；同名书籍需要排重；要求结果集合中只包含-new-Book-“Java从入门到精通”-50-，new-Book-“深入理解Java虚拟机”-60"><a href="#4-Data-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-public-static-class-Book-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-private-String-name-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-private-Integer-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-public-Book-String-name-int-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-this-name-name-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-this-price-price-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-List-bookList-Arrays-asList-new-Book-“Java从入门到精通”-55-new-Book-“深入理解Java虚拟机”-60-new-Book-“Java从入门到精通”-50-new-Book-“深入理解Java虚拟机”-65-nbsp-nbsp-nbsp-请使用JAVA-Stream-API-筛选出上述书籍价格最便宜的书籍列表；同名书籍需要排重；要求结果集合中只包含-new-Book-“Java从入门到精通”-50-，new-Book-“深入理解Java虚拟机”-60" class="headerlink" title="4.@Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public static class Book {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private String name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private Integer price;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Book(String name, int price) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.price = price;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;List bookList = Arrays.asList(new Book(“Java从入门到精通”, 55), new Book(“深入理解Java虚拟机”, 60), new Book(“Java从入门到精通”, 50), new Book(“深入理解Java虚拟机”, 65));&nbsp;&nbsp;&nbsp;请使用JAVA Stream API 筛选出上述书籍价格最便宜的书籍列表；同名书籍需要排重；要求结果集合中只包含 new Book(“Java从入门到精通”, 50)，new Book(“深入理解Java虚拟机”, 60)"></a>4.@Data<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;public static class Book {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private String name;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private Integer price;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Book(String name, int price) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.price = price;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;List<book> bookList = Arrays.asList(new Book(“Java从入门到精通”, 55), new Book(“深入理解Java虚拟机”, 60), new Book(“Java从入门到精通”, 50), new Book(“深入理解Java虚拟机”, 65));<br>&nbsp;&nbsp;&nbsp;请使用JAVA Stream API 筛选出上述书籍价格最便宜的书籍列表；同名书籍需要排重；要求结果集合中只包含 new Book(“Java从入门到精通”, 50)，new Book(“深入理解Java虚拟机”, 60)</book></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Book&gt; bookArrayList = <span class="keyword">new</span> ArrayList&lt;&gt;(bookList);</span><br><span class="line">bookArrayList.removeIf(</span><br><span class="line">      book -&gt;</span><br><span class="line">      bookArrayList.stream().filter(</span><br><span class="line">            streamBook -&gt; (streamBook.getName().equals(book.getName()) &amp;&amp; streamBook.getPrice() &lt; book.getPrice())</span><br><span class="line">      ).count() != <span class="number">0</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="5-请写出cookie的作用；-Cookie有哪几个重要属性？-简要描述下cookie过期和服务端Session超时有什么区别；"><a href="#5-请写出cookie的作用；-Cookie有哪几个重要属性？-简要描述下cookie过期和服务端Session超时有什么区别；" class="headerlink" title="5.请写出cookie的作用；  Cookie有哪几个重要属性？ 简要描述下cookie过期和服务端Session超时有什么区别；"></a>5.请写出cookie的作用；  Cookie有哪几个重要属性？ 简要描述下cookie过期和服务端Session超时有什么区别；</h3><pre><code>cookie可以记录一些用户信息，例如登录信息，用户下次访问时可以自动填充。或者记录用户登录后服务端生成的唯一密钥，方便辨别用户身份。属性有name、value、path、Max-Age。cookie过期是固定时间，比如设置了30分钟，从设置开始30分钟后cookie信息或者用户关闭浏览器就会自动销毁，而session过期时间设置了30分钟，当用户第29分钟访问了session信息，session就会重新变为30分钟后过期
+</code></pre><h3 id="6-什么是请求重定向？-请写出两种SpringMVC中实现重定向的方式；"><a href="#6-什么是请求重定向？-请写出两种SpringMVC中实现重定向的方式；" class="headerlink" title="6.什么是请求重定向？ 请写出两种SpringMVC中实现重定向的方式；"></a>6.什么是请求重定向？ 请写出两种SpringMVC中实现重定向的方式；</h3><pre><code>重定向是将用户请求转到另一个地址，用户地址栏会发生变化。
+第一种：
+    response.sendRedirect(“https://www.baidu.com”);
+第二种：
+    return “redirect:https://www.baidu.com”;
+</code></pre><h3 id="7-简述java-web中servlet的生命周期；-JSP和servlet的联系和区别；-Filter的实现机制；"><a href="#7-简述java-web中servlet的生命周期；-JSP和servlet的联系和区别；-Filter的实现机制；" class="headerlink" title="7.简述java web中servlet的生命周期； JSP和servlet的联系和区别； Filter的实现机制；"></a>7.简述java web中servlet的生命周期； JSP和servlet的联系和区别； Filter的实现机制；</h3><pre><code>生命周期：加载类、实例化、初始化、处理请求、销毁
+
+JSP编译之后就是Servlet，是对servlet的一种封装，本质还是servlet。servlet生成页面时需要使用writer来输出html，而jsp是java和html组合成的后缀名为.jsp的文件，擅长页面展示，而servlet擅长控制逻辑
+</code></pre><h3 id="8-什么是浏览器的同源策略？-什么是跨域请求？-列举几种可以规避跨域限制的方式；-请简述其中某一种的实现原理；"><a href="#8-什么是浏览器的同源策略？-什么是跨域请求？-列举几种可以规避跨域限制的方式；-请简述其中某一种的实现原理；" class="headerlink" title="8.什么是浏览器的同源策略？ 什么是跨域请求？ 列举几种可以规避跨域限制的方式； 请简述其中某一种的实现原理；"></a>8.什么是浏览器的同源策略？ 什么是跨域请求？ 列举几种可以规避跨域限制的方式； 请简述其中某一种的实现原理；</h3><pre><code>同源策略是域名、协议、端口都相同。任意一个不同就属于跨域。
+规避方式：
+    - JSONP
+    - 服务端设置Header
+    - proxy代理
+proxy代理就是让代理服务器去请求目标地址，因为服务端请求没有跨域问题。
+</code></pre><h3 id="9-写出SpringMVC中-RestController、-Controller、-ResponseBody、-RequestBody、-RequestParam、-PathVariable这几个注解的作用和区别；-同时也介绍一下-Autowired、-Resource、-Qualifier这几个注解的作用和区别；"><a href="#9-写出SpringMVC中-RestController、-Controller、-ResponseBody、-RequestBody、-RequestParam、-PathVariable这几个注解的作用和区别；-同时也介绍一下-Autowired、-Resource、-Qualifier这几个注解的作用和区别；" class="headerlink" title="9.写出SpringMVC中@RestController、@Controller、@ResponseBody、@RequestBody、@RequestParam、@PathVariable这几个注解的作用和区别； 同时也介绍一下@Autowired、@Resource、@Qualifier这几个注解的作用和区别；"></a>9.写出SpringMVC中@RestController、@Controller、@ResponseBody、@RequestBody、@RequestParam、@PathVariable这几个注解的作用和区别； 同时也介绍一下@Autowired、@Resource、@Qualifier这几个注解的作用和区别；</h3><pre><code>@RestController 和 @Controller 用于标注类是一个控制器，RestController不可以返回页面，return的都是具体内容。 而@Controller返回的是相应的页面。
+
+@ResponseBody用于标注返回结果不解析为跳转的页面路径，@RequestBody用于将请求body中的数据转化为方法中的参数
+
+@RequestParam标注获取的是请求参数，如?id=1。@PathVariable标注获取路径参数， 如/id=1
+
+@Autowired和@Resource用于装配bean，Autowired按照类型自动注入，而Resource按照名称自动注入，    当有多个同样类型的Bean时，使用Autowired会出现错误，使用@Qualifier配合@Autowired可以按照名称注入
+</code></pre><h3 id="10-简单介绍一下Spring-Boot-自动装配的原理以及如何关闭指定组件的自动装配功能；"><a href="#10-简单介绍一下Spring-Boot-自动装配的原理以及如何关闭指定组件的自动装配功能；" class="headerlink" title="10.简单介绍一下Spring Boot 自动装配的原理以及如何关闭指定组件的自动装配功能；"></a>10.简单介绍一下Spring Boot 自动装配的原理以及如何关闭指定组件的自动装配功能；</h3><pre><code>在classpath中找到META-INF文件夹下的spring.factories文件，将里面EnableAutoConfiguration对应的配置项，用反射实例化为IOC的配置类，然后加载到IOC容器中。
+
+通过@EnableAutoConfigureation或@SpringBootApplication的exclude属性来关闭自动装配功能
+</code></pre><h3 id="11-请介绍一下在Spring-Boot中如何配置Web过滤器（Filter）以及Spring-MVC的拦截器"><a href="#11-请介绍一下在Spring-Boot中如何配置Web过滤器（Filter）以及Spring-MVC的拦截器" class="headerlink" title="11.请介绍一下在Spring Boot中如何配置Web过滤器（Filter）以及Spring MVC的拦截器"></a>11.请介绍一下在Spring Boot中如何配置Web过滤器（Filter）以及Spring MVC的拦截器</h3><pre><code>实现Filter，通过@WebFilter注解以及启动类@ServletComponetScan注解配置Web过滤器
+实现HandlerInterceptor，然后通过继承WebMvcConfiguration配置拦截器
+</code></pre><h3 id="12-Redis常用的数据结构有哪些，简述其特性；"><a href="#12-Redis常用的数据结构有哪些，简述其特性；" class="headerlink" title="12.Redis常用的数据结构有哪些，简述其特性；"></a>12.Redis常用的数据结构有哪些，简述其特性；</h3><pre><code>String：字符串类型，使用二进制存储。
+List：字符串列表，实际为一个链表，按插入顺序排序，元素可以重复。
+Hash：相当于Java中的Map，键值对形式。
+Set：无序的字符串列表。并且不可以重复。
+ZSet：有序的字符串列表。 不可以重复。
+</code></pre><h3 id="13-持久化的机制有几种，都是怎么样触发的？"><a href="#13-持久化的机制有几种，都是怎么样触发的？" class="headerlink" title="13.持久化的机制有几种，都是怎么样触发的？"></a>13.持久化的机制有几种，都是怎么样触发的？</h3><pre><code>分为RDB和AOF两种，RDB是将数据写入dump.rdb文件中，重启时加载此文件恢复数据。AOF为将每一个执行的操作用文本方式记录，重启时将这些记录从头开始执行一遍。
+</code></pre><h3 id="14-Redis使用过程中遇到的性能瓶颈有哪些，是如何解决的？"><a href="#14-Redis使用过程中遇到的性能瓶颈有哪些，是如何解决的？" class="headerlink" title="14.Redis使用过程中遇到的性能瓶颈有哪些，是如何解决的？"></a>14.Redis使用过程中遇到的性能瓶颈有哪些，是如何解决的？</h3><pre><code>运行时出现Red Timed Out错误，最后发现是使用了大量的keys操作，keys在大量并发情况下性能很差。对keys做了优化，尽量避免使用keys。
+</code></pre><h3 id="15-Linux如何查看启动指定端口7480的JAVA进程；"><a href="#15-Linux如何查看启动指定端口7480的JAVA进程；" class="headerlink" title="15.Linux如何查看启动指定端口7480的JAVA进程；"></a>15.Linux如何查看启动指定端口7480的JAVA进程；</h3><pre><code>lsof -i:7480
+ps -ef |grep 进程id
+</code></pre><h3 id="16-统计指定文件（nginx日志文件）中3月2号中午12点到13点访问量？（日志文件是标准的log4j输出日志，每行以时间开头，时间格式“yyyy-MM-dd-HH-mm-ss”）"><a href="#16-统计指定文件（nginx日志文件）中3月2号中午12点到13点访问量？（日志文件是标准的log4j输出日志，每行以时间开头，时间格式“yyyy-MM-dd-HH-mm-ss”）" class="headerlink" title="16.统计指定文件（nginx日志文件）中3月2号中午12点到13点访问量？（日志文件是标准的log4j输出日志，每行以时间开头，时间格式“yyyy-MM-dd HH:mm:ss”）"></a>16.统计指定文件（nginx日志文件）中3月2号中午12点到13点访问量？（日志文件是标准的log4j输出日志，每行以时间开头，时间格式“yyyy-MM-dd HH:mm:ss”）</h3><pre><code>sed -n &apos;/2019-03-02 12:00:00/,/2019-03-02 13:10:00/p&apos; nginx.log
+</code></pre><h3 id="17-数据库"><a href="#17-数据库" class="headerlink" title="17.数据库"></a>17.数据库</h3><p>学生表STUDENT，内容如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">SNO（学号）</th>
+<th style="text-align:left">SNAME</th>
+<th style="text-align:left">SAGE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">周杰伦</td>
+<td style="text-align:left">18</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">周润发</td>
+<td style="text-align:left">18</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">吴孟达</td>
+<td style="text-align:left">25</td>
+</tr>
+</tbody>
+</table>
+<p>课程表：COURSE，内容如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CNO（课程编号）</th>
+<th style="text-align:left">CNAME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">001</td>
+<td style="text-align:left">数学</td>
+</tr>
+<tr>
+<td style="text-align:left">002</td>
+<td style="text-align:left">语文</td>
+</tr>
+<tr>
+<td style="text-align:left">003</td>
+<td style="text-align:left">英语</td>
+</tr>
+</tbody>
+</table>
+<p>成绩：SC，内容如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">SNO（学号）</th>
+<th style="text-align:left">CNO（课程编号）</th>
+<th style="text-align:left">SCORE（成绩）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">001</td>
+<td style="text-align:left">85</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">002</td>
+<td style="text-align:left">80</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">001</td>
+<td style="text-align:left">83</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">002</td>
+<td style="text-align:left">83</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-查询001-课程-比002课程-成绩高的所有学生的编号"><a href="#1-查询001-课程-比002课程-成绩高的所有学生的编号" class="headerlink" title="1.查询001 课程 比002课程 成绩高的所有学生的编号"></a>1.查询001 课程 比002课程 成绩高的所有学生的编号</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> t1.SNO</span><br><span class="line"><span class="keyword">FROM</span> sc t1, sc t2</span><br><span class="line"><span class="keyword">WHERE</span> t1.SNO = t2.SNO </span><br><span class="line"><span class="keyword">and</span> t1.CNO = <span class="string">'001'</span></span><br><span class="line"><span class="keyword">and</span> t2.CNO = <span class="string">'002'</span></span><br><span class="line"><span class="keyword">and</span> t1.SCORE &gt; t2.SCORE</span><br></pre></td></tr></table></figure>
+<h4 id="2-查询所有学生的学号，姓名，选课数，总成绩"><a href="#2-查询所有学生的学号，姓名，选课数，总成绩" class="headerlink" title="2.查询所有学生的学号，姓名，选课数，总成绩"></a>2.查询所有学生的学号，姓名，选课数，总成绩</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> t1.SNO <span class="keyword">as</span> 学号, t1.SNAME <span class="keyword">as</span> 姓名, <span class="keyword">count</span>(t3.CNO), <span class="keyword">sum</span>(t2.SCORE) <span class="keyword">as</span> 总成绩 <span class="keyword">as</span> 选课数</span><br><span class="line"><span class="keyword">FROM</span> student t1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sc t2 <span class="keyword">ON</span> t1.SNO = t2.SNO</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> course t3 <span class="keyword">ON</span> t2.CNO = t3.CNO</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> t1.SNO</span><br></pre></td></tr></table></figure>
+<h3 id="3-查询没有学全所有课的学生的姓名，学号"><a href="#3-查询没有学全所有课的学生的姓名，学号" class="headerlink" title="3.查询没有学全所有课的学生的姓名，学号"></a>3.查询没有学全所有课的学生的姓名，学号</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t1.SNO,t1.SNAME <span class="keyword">from</span> student  t1</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">Count</span>(t2.SNO) <span class="keyword">From</span> sc t2 <span class="keyword">Where</span> t1.SNO=t2.SNO) &lt; (<span class="keyword">select</span> <span class="keyword">Count</span>(CNO) <span class="keyword">From</span> course)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -267,11 +361,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术点</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
@@ -283,7 +377,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技术点//" class="article-tag-list-link color4">技术点</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
@@ -338,7 +432,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/聊天信息实时监控/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/27/一次面试的面试题记录/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -352,18 +446,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/07/30/Grafana-Kid数据上报组件集成介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Grafana:Kid数据上报组件集成介绍
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/17/HTTP跨域值CORS/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTTP跨域值CORS</div>
+    <a href="/2019/09/02/二分法理解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二分法理解</div>
       <i class="icon-circle-right"></i>
     </a>
   
