@@ -6,23 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Grafana:Kid数据上报组件集成介绍 | Harrison&#39;s Blog</title>
+  <title>gitlab集成sonar代码质量管理 | Harrison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言　　公司项目需要，加入Grafana对项目的流量就行一个监控，具体Grafana的搭建这里不做介绍，大家可以参考Grafana官方文档。这里简单介绍一下用Kid数据上报来把业务请求数据上报到Grafana。">
-<meta name="keywords" content="Java,插件,Grafana">
+  <meta name="description" content="前言　　公司代码使用GitLab之后，管理代码经常有两个人提交然后导致线上代码编译无法通过的情况。所以集成sonal进行代码质量管理，代码提交之后会对代码进行一个检测，有错误的话会通过邮件提醒。">
+<meta name="keywords" content="GitLab,代码管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grafana:Kid数据上报组件集成介绍">
-<meta property="og:url" content="http://yoursite.com/2019/07/30/Grafana-Kid数据上报组件集成介绍/index.html">
+<meta property="og:title" content="gitlab集成sonar代码质量管理">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/gitlab集成sonar代码质量管理/index.html">
 <meta property="og:site_name" content="Harrison&#39;s Blog">
-<meta property="og:description" content="前言　　公司项目需要，加入Grafana对项目的流量就行一个监控，具体Grafana的搭建这里不做介绍，大家可以参考Grafana官方文档。这里简单介绍一下用Kid数据上报来把业务请求数据上报到Grafana。">
+<meta property="og:description" content="前言　　公司代码使用GitLab之后，管理代码经常有两个人提交然后导致线上代码编译无法通过的情况。所以集成sonal进行代码质量管理，代码提交之后会对代码进行一个检测，有错误的话会通过邮件提醒。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.imgur.com/Ks78dBD.png">
-<meta property="og:image" content="https://i.imgur.com/qIocWk8.png">
-<meta property="og:updated_time" content="2019-08-21T02:23:23.585Z">
+<meta property="og:image" content="http://10.5.8.119:18181/uploads/201909/venus/attach_15c176cee897e54c.png">
+<meta property="og:updated_time" content="2019-09-29T08:05:10.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grafana:Kid数据上报组件集成介绍">
-<meta name="twitter:description" content="前言　　公司项目需要，加入Grafana对项目的流量就行一个监控，具体Grafana的搭建这里不做介绍，大家可以参考Grafana官方文档。这里简单介绍一下用Kid数据上报来把业务请求数据上报到Grafana。">
-<meta name="twitter:image" content="https://i.imgur.com/Ks78dBD.png">
+<meta name="twitter:title" content="gitlab集成sonar代码质量管理">
+<meta name="twitter:description" content="前言　　公司代码使用GitLab之后，管理代码经常有两个人提交然后导致线上代码编译无法通过的情况。所以集成sonal进行代码质量管理，代码提交之后会对代码进行一个检测，有错误的话会通过邮件提醒。">
+<meta name="twitter:image" content="http://10.5.8.119:18181/uploads/201909/venus/attach_15c176cee897e54c.png">
   
     <link rel="alternative" href="/atom.xml" title="Harrison&#39;s Blog" type="application/atom+xml">
   
@@ -166,54 +165,37 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Grafana-Kid数据上报组件集成介绍" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-gitlab集成sonar代码质量管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Grafana:Kid数据上报组件集成介绍
+      gitlab集成sonar代码质量管理
     </h1>
   
 
         
-        <a href="/2019/07/30/Grafana-Kid数据上报组件集成介绍/" class="archive-article-date">
-  	<time datetime="2019-07-30T02:10:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
+        <a href="/2019/09/29/gitlab集成sonar代码质量管理/" class="archive-article-date">
+  	<time datetime="2019-09-29T07:57:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　公司项目需要，加入<a href="https://grafana.com/" target="_blank" rel="noopener">Grafana</a>对项目的流量就行一个监控，具体Grafana的搭建这里不做介绍，大家可以参考<a href="https://grafana.com/docs/" target="_blank" rel="noopener">Grafana官方文档</a>。这里简单介绍一下用Kid数据上报来把业务请求数据上报到Grafana。<a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　公司代码使用GitLab之后，管理代码经常有两个人提交然后导致线上代码编译无法通过的情况。所以集成sonal进行代码质量管理，代码提交之后会对代码进行一个检测，有错误的话会通过邮件提醒。<a id="more"></a></p>
 <hr>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="1-工作流程介绍"><a href="#1-工作流程介绍" class="headerlink" title="1. 工作流程介绍"></a>1. 工作流程介绍</h2><h4 id="Kid工作流程图："><a href="#Kid工作流程图：" class="headerlink" title="Kid工作流程图："></a>Kid工作流程图：</h4><p><img src="https://i.imgur.com/Ks78dBD.png" alt="Kid工作流程图"></p>
-<h3 id="2-feature"><a href="#2-feature" class="headerlink" title="2. feature"></a>2. feature</h3><ul>
-<li>支持业务数据上报到Grafana+influxdb，可定制dashboard及监控</li>
-<li>支持业务数据上报到ElasticSearch</li>
-<li>支持业务数据和大数据部门对接</li>
-<li>支持springboot/Spring等项目<br>maven引入：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.simple.kid<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>kid-collector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="集成方式"><a href="#集成方式" class="headerlink" title="集成方式"></a>集成方式</h2><p>　　主要通过Gitlab CI进行集成，通过执行maven命令，编译项目，最终将编译结果推送到Sonar平台，生产最终结果报告。</p>
+<h2 id="GitLab-CI-CD介绍"><a href="#GitLab-CI-CD介绍" class="headerlink" title="GitLab CI/CD介绍"></a>GitLab CI/CD介绍</h2><p>　　首先使用一张图说明GitLab CI的工作流程：<br>　　<img src="http://10.5.8.119:18181/uploads/201909/venus/attach_15c176cee897e54c.png" alt=""><br>　　GitLab CI是 GitLab 提供的持续集成服务，只要在你的仓库根目录 创建一个.gitlab-ci.yml 文件， 并为该项目指派一个Runner，当有合并请求或者 push的时候就会触发build。<br>　　这个.gitlab-ci.yml 文件定义GitLab runner要做哪些操作。 默认有3个[stages(阶段)]: build、test、deploy。当build完成后(返回非零值)，你会看到push的 commit或者合并请求前面出现一个绿色的对号。 这个功能很方便的让你检查出来合并请求是否会导致build失败， 免的你去检查代码。<br>　　大部分项目用GitLab’s CI服务跑build测试， 开发者会很快得到反馈，知道自己是否写出了BUG。<br>　　所以简单的说，要让CI工作可总结为以下几点:</p>
+<ul>
+<li>项目为maven项目</li>
+<li>在仓库根目录创建一个名为.gitlab-ci.yml 的文件</li>
+<li>为该项目配置一个Runner</li>
 </ul>
-<p>注意事项：<br>如果原项目引入guava，需要修改版本为20.0<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.google.guava<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>guava<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>20.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="数据收集对象KVData构造器介绍："><a href="#数据收集对象KVData构造器介绍：" class="headerlink" title="数据收集对象KVData构造器介绍："></a>数据收集对象KVData构造器介绍：</h4><p>KVData(String metric, Map&lt;String, String&gt; metricMap)<br>功能说明：用于Grafana日志监控<br>参数说明：<br>metric：统计项名称，英文格式（如：watcher）<br>metricMap：监控的数据</p>
-<h2 id="3-SpringBoot版本使用示例"><a href="#3-SpringBoot版本使用示例" class="headerlink" title="3.SpringBoot版本使用示例"></a>3.SpringBoot版本使用示例</h2><h4 id="appliaction-yml配置项："><a href="#appliaction-yml配置项：" class="headerlink" title="appliaction.yml配置项："></a>appliaction.yml配置项：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">kid:</span><br><span class="line"> grpc:</span><br><span class="line">   port: 50021         #服务端端口号</span><br><span class="line">   host: 127.0.0.1    #服务端host</span><br><span class="line">   drainToSize: 5000   #批量处理数据大小</span><br><span class="line">   workThreadNum: 10   #工作线程数</span><br><span class="line">   queueSize: 50000    #每个线程队列大</span><br><span class="line">   appName: demo        #应用名称</span><br><span class="line">   platform: quarzJob    #监控功能来源（如：quarzJob定时任务）</span><br></pre></td></tr></table></figure>
-<h2 id="4-原生Spring使用示例"><a href="#4-原生Spring使用示例" class="headerlink" title="4.原生Spring使用示例"></a>4.原生Spring使用示例</h2><h4 id="appliaction-xml配置项："><a href="#appliaction-xml配置项：" class="headerlink" title="appliaction.xml配置项："></a>appliaction.xml配置项：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transfer"</span> <span class="attr">class</span>=<span class="string">"org.simple.kid.collector.GrpcTransfer"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"kidGrpcClient"</span> <span class="attr">index</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"kidGrpcClient"</span> <span class="attr">class</span>=<span class="string">"org.simple.kid.client.KidGrpcClient"</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 服务器地址--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"127.0.0.1"</span> <span class="attr">index</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 端口号--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"8000"</span> <span class="attr">index</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 应用名称--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"demo"</span> <span class="attr">index</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--业务线名称--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"quarzJob"</span> <span class="attr">index</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"kid"</span> <span class="attr">class</span>=<span class="string">"org.simple.kid.collector.Kid"</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--工作线程大小--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"10"</span> <span class="attr">index</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--队列大小--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"10000"</span> <span class="attr">index</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--数据批量处理大小--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"5000"</span> <span class="attr">index</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"transfer"</span> <span class="attr">index</span>=<span class="string">"3"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-示例代码"><a href="#5-示例代码" class="headerlink" title="5.示例代码"></a>5.示例代码</h2><p>注意事项，通过@Autowired引用kid时，确保当前class已经加上了spring注解。如@service，@controller等，对于未通过spring管理的bean,通过@Autowired引入会报null<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//metricMap Map为&lt;String,String&gt;类型</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">Kid kid;</span><br><span class="line">Map&lt;String,String&gt; kvMap = <span class="keyword">new</span> HashMap();</span><br><span class="line">kvMap.put(<span class="string">"xxx"</span>,<span class="string">"xxxx"</span>);</span><br><span class="line">KVData kvData = <span class="keyword">new</span> KVData(<span class="string">"watcher"</span>, kvMap);</span><br><span class="line">kid.record(kvData);</span><br></pre></td></tr></table></figure></p>
-<h2 id="6-Grafana监控系统"><a href="#6-Grafana监控系统" class="headerlink" title="6.Grafana监控系统"></a>6.Grafana监控系统</h2><p>最终数据可以通过Grafana实时展现出来<br><img src="https://i.imgur.com/qIocWk8.png" alt="Grafana监控系统"></p>
-<h2 id="7-KvData通用接口监控参数"><a href="#7-KvData通用接口监控参数" class="headerlink" title="7.KvData通用接口监控参数"></a>7.KvData通用接口监控参数</h2><h4 id="配置项定义："><a href="#配置项定义：" class="headerlink" title="配置项定义："></a>配置项定义：</h4><p>platform: 平台自己根据业务定义<br>appName: 平台自己根据业务定义</p>
-<h4 id="KvData数据格式如下："><a href="#KvData数据格式如下：" class="headerlink" title="KvData数据格式如下："></a>KvData数据格式如下：</h4><p>metric：commonWatcher  (固定值)</p>
-<h4 id="metricMap参数如下："><a href="#metricMap参数如下：" class="headerlink" title="metricMap参数如下："></a>metricMap参数如下：</h4><p>tag：统计项别名<br>host：主机host，ip<br>success：1（成功）0（异常，失败）<br>faliure：1（异常，失败），0（成功）  和success值相反<br>timeCost：耗时(毫秒)</p>
-<h4 id="参考示例kvMap参数如下："><a href="#参考示例kvMap参数如下：" class="headerlink" title="参考示例kvMap参数如下："></a>参考示例kvMap参数如下：</h4><pre><code>Map&lt;String, String&gt; kvMap = Maps.newHashMap();
-  kvMap.put(&quot;tag&quot;, kidMonitorBO.getTag());
-  kvMap.put(&quot;host&quot;, kidMonitorBO.getHost());
-  kvMap.put(&quot;success&quot;, kidMonitorBO.getSuccess());
-  kvMap.put(&quot;faliure&quot;, kidMonitorBO.getFaliure());
-  kvMap.put(&quot;timeCost&quot;, String.valueOf(kidMonitorBO.getTimeCost()));
-  kvMap.put(&quot;resultCount&quot;, String.valueOf(kidMonitorBO.getResultCount()));
-  KVData kvData = new KVData(TAG_COLLECT_API, kvMAap);
-</code></pre>
+<p>　　完成上面的步骤后，每次push代码到Git仓库， Runner就会自动开始pipelin</p>
+<h2 id="gitlab-ci-yml配置项参考"><a href="#gitlab-ci-yml配置项参考" class="headerlink" title=".gitlab-ci.yml配置项参考"></a>.gitlab-ci.yml配置项参考</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本次构建的阶段：build package</span></span><br><span class="line"><span class="attr">stages:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">build</span></span><br><span class="line"><span class="comment"># 构建 Job</span></span><br><span class="line"><span class="attr">build:</span></span><br><span class="line"><span class="attr">  stage:</span> <span class="string">build</span></span><br><span class="line"><span class="attr">  tags:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">dev</span></span><br><span class="line"><span class="attr">  script:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">echo</span> <span class="string">"=============== 开始编译构建任务 ==============="</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">mvn</span> <span class="string">clean</span> <span class="string">compile</span> <span class="attr">sonar:sonar</span> <span class="bullet">-Dsonar.host.url=http://sonarqube.gamebean.net</span> <span class="bullet">-Dsonar.login=52d02422f569c52b62f0497e06383c4a7b71bf06</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -257,15 +239,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitLab</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Grafana</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码管理</a>
         		</li>
       		
 		</ul>
@@ -332,7 +310,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/30/Grafana-Kid数据上报组件集成介绍/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/29/gitlab集成sonar代码质量管理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,18 +324,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/08/21/多线程断点下载文件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          多线程断点下载文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/18/聊天信息实时监控/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">聊天信息实时监控</div>
+    <a href="/2019/09/27/一次面试的面试题记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一次面试的面试题记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
